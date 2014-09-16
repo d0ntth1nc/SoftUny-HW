@@ -1,0 +1,19 @@
+/* Problem 11
+ * You are given an Excel file Incomes-Report.xlsx holding an incomes report.
+ * Each office puts in this Excel file all their incomes
+ * (office, date, description, income, 20% VAT, total income).
+ * Your task is to read the report and to calculate the
+ * incomes sub-totals for each office (with VAT).
+ * Order the offices alphabetically. Print the result at
+ * the console in format town Total -> incomes.
+ * Finally calculate and print the grand total
+ * (the sum of all incomes in all offices).
+ */
+public class ExcelReader {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

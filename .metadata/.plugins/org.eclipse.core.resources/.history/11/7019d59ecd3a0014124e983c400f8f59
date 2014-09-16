@@ -1,0 +1,19 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class DaysBetweenTwoDates {
+
+	public static void main(String[] args) throws ParseException {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		String firstDate = scanner.nextLine();
+		String secondDate = scanner.nextLine();
+		Date date = new SimpleDateFormat("dd mm, yyyy", Locale.ROOT).parse(firstDate);
+	}
+
+}

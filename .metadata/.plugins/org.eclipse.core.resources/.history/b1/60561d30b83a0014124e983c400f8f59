@@ -1,0 +1,53 @@
+import java.util.Map;
+
+import Helpers.Card;
+
+/*
+ * In most Poker games, the "full house" hand is
+ * defined as three cards of the same face +
+ * two cards of the same face, other than the first,
+ * regardless of the card's suits. The cards faces are
+ * "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
+ * "K" and "A". The card suits are "♣", "♦", "♥" and "♠".
+ * Write a program to generate and
+ * print all full houses and print their number.
+ */
+public class FullHousesPrinter {
+
+	public static void main(String[] args) {
+		Card[] deck = createDeck();
+		
+	}
+	
+	private static void printFullHouses(Card[] deck) {
+		for (int i = 0; i < deck.length; i++) {
+			for (int j = 0; j < deck.length; j++) {
+				for (int j2 = 0; j2 < deck.length; j2++) {
+					for (int k = 0; k < deck.length; k++) {
+						for (int k2 = 0; k2 < deck.length; k2++) {
+							
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private static Card[] createDeck() {
+		String[] ranks = { "2", "3", "4", "5", "6", "7",
+				"8", "9", "10", "J", "Q", "K", "A" };
+		char[] suits = { '\u2660', '\u2665', '\u2666', '\u2663' };
+		Card[] deck = new Card[ranks.length * suits.length];
+		
+		for (int rankIndex = 0, cardIndex = 0; rankIndex < ranks.length;
+				rankIndex++, cardIndex++) {
+			for (int suitIndex = 0; suitIndex < suits.length;
+					suitIndex++, cardIndex++) {
+				Card card = new Card(suits[suitIndex], ranks[rankIndex]);
+				deck[cardIndex] = card;
+			}
+		}
+		
+		return deck;
+	}
+}

@@ -1,0 +1,38 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
+/*
+ * Write a program to read a text file "Input.txt"
+ * holding a sequence of integer numbers,
+ * each at a separate line. Print the sum of
+ * the numbers at the console. Ensure you close correctly the
+ * file in case of exception or in case of normal execution.
+ * In case of exception (e.g. the file is missing),
+ * print "Error" as a result
+ */
+public class SumNumbersFromText {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Double> ar = new ArrayList<Double>();
+		try {
+			Path path = Paths.get("");
+			Files.lines(path).forEach((line) -> {
+				double result = Double.parseDouble(line);
+				ar.add(result);
+			});
+			
+			double sum = 0;
+			for (double number : ar) {
+				sum += number;
+			}
+			System.out.println(sum);
+		} catch (IOException e) {
+			System.out.println("Error");
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+/*
+ * Write a program to calculate the count of
+ * bits 1 in the binary representation of
+ * given integer number n.
+ */
+public class Problem_07_CountOfBit1 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner( System.in );
+
+	}
+
+}

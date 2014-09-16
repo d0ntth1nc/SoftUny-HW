@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Java-Loops-Methods-Classes-Homeworks/src/FullHousesPrinter.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<<<<<<< HEAD
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
+=======
+>>>>>>> 5b3aad4cb352c1b098f303dc2791a9402e94f990
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="FullHousesPrinter"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Java-Loops-Methods-Classes-Homeworks"/>
+</launchConfiguration>
