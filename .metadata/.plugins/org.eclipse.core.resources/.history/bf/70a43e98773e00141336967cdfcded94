@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class SimpleExpression {
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		String expression = scanner.nextLine();
+		Matcher m = Pattern.compile("\\S*d*(\\.d)*\\S*").matcher(expression);
+		
+		Stack<Float> numbers = new Stack<>();
+		Stack<String> operations = new Stack<>();
+		while(m.find()) {
+			String element = m.group(2);
+			System.out.println(element);
+			switch (element) {
+				case "-":
+				case "+":
+					operations.push(element);
+					break;
+				default: 
+					numbers.push(Float.parseFloat(element));
+					break;
+			}
+		}
+		
+		float result = numbers.pop();
+		while (numbers.size() > 0) {
+			String operation = operations.pop();
+			if (operation == "+") {
+				result += numbers.pop();
+			} else {
+				result += numbers.pop();
+			}
+		}
+		
+		System.out.println(result);
+	}
+}

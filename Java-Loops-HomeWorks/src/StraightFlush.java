@@ -14,6 +14,7 @@ public class StraightFlush {
 			cardsSet.add(card);
 		}
 		
+		boolean hasFlushes = false;
 		for (String card : cards) {
 			String[] flush = getFlush(card);
 			
@@ -30,10 +31,15 @@ public class StraightFlush {
 			}
 			
 			if (isValid) {
+				hasFlushes = true;
 				System.out.print("[");
 				System.out.print(String.join(", ", flush));
 				System.out.print("]\n");
 			}
+		}
+		
+		if (!hasFlushes) {
+			System.out.println("No Straight Flushes");
 		}
 	}
 	

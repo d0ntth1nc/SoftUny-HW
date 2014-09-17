@@ -1,0 +1,43 @@
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class SimpleExpression {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.ROOT);
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		String line = scanner.nextLine();
+		Matcher numbersMatcher = Pattern.compile("([0-9]*\\.[0-9]+|[0-9]+)").matcher(line);
+		Matcher operatorsMatcher = Pattern.compile("\\+|\\-").matcher(line);
+		
+		Stack<Float> numbers = new Stack<>();
+		while (numbersMatcher.find()) {
+			numbers.push(Float.parseFloat(numbersMatcher.group()));
+		}
+		
+		Stack<String> operators = new Stack<>();
+		while (operatorsMatcher.find()) {
+			operators.push(operatorsMatcher.group());
+		}
+		
+		float sum = 0;
+		while (numbers.size() > 0) {
+			float num = numbers.pop();
+			String operator = "+";
+			if (operators.size() > 0) {
+				operator = operators.pop();
+			}
+			
+			if (operator == "+") {
+				sum += num;
+			} else {
+				sum -= num;
+			}
+		}
+		
+		System.out.println(sum);
+	}
+}
