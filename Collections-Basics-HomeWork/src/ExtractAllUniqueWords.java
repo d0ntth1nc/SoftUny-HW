@@ -1,9 +1,7 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /*
  * At the first line at the console you are given a piece of text.
@@ -20,18 +18,11 @@ public class ExtractAllUniqueWords {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		String text = scanner.nextLine();
-		Pattern pattern = Pattern.compile("\\w+", Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(text);
-		
-		
-		SortedSet<String> uniqueWords = new TreeSet<String>();
-		while (matcher.find()) {
-			// The set does not allow duplicates
-			uniqueWords.add(matcher.group().toLowerCase());
-		}
-		for(String word : uniqueWords) {
+		String[] words = text.toLowerCase().split("[^a-zA-Z]+");
+		TreeSet<String> uniqueWords = new TreeSet<String>(Arrays.asList(words));
+		uniqueWords.forEach(word -> {
 			System.out.printf("%s ", word);
-		}
+		});
 	}
 
 }

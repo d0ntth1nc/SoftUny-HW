@@ -1973,3 +1973,162 @@ org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 2; The content of el
 
 !ENTRY org.eclipse.jdt.launching 4 150 2014-09-17 02:50:44.379
 !MESSAGE The archive: /Java-Loops-HomeWorks/lib/xmlbeans-2.3.0.jar which is referenced by the classpath, does not exist.
+!SESSION 2014-09-18 05:26:13.840 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-09-18 05:26:16.027
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-09-18 05:26:35.656
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Aleksandur'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.debug.core 4 125 2014-09-18 05:34:28.231
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.debug.core.DebugException: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 2; The content of elements must consist of well-formed character data or markup. occurred while reading launch configuration file: C:\Users\Aleksandur\workspace\.metadata\.plugins\org.eclipse.debug.core\.launches\FullHousesPrinter.launch.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:926)
+	at org.eclipse.debug.internal.core.LaunchManager.throwException(LaunchManager.java:2475)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1379)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.debug.internal.core.LaunchManager.isValid(LaunchManager.java:2102)
+	at org.eclipse.debug.internal.core.LaunchManager.verifyConfigurations(LaunchManager.java:2489)
+	at org.eclipse.debug.internal.core.LaunchManager.getAllLaunchConfigurations(LaunchManager.java:1146)
+	at org.eclipse.debug.internal.core.LaunchManager.getLaunchConfigurations(LaunchManager.java:1429)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.restoreHistory(LaunchConfigurationManager.java:572)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.restoreLaunchHistory(LaunchConfigurationManager.java:541)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.loadLaunchHistories(LaunchConfigurationManager.java:1069)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getLaunchHistory(LaunchConfigurationManager.java:1041)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.internalGetHistory(AbstractLaunchHistoryAction.java:540)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.getToolTip(AbstractLaunchHistoryAction.java:233)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.updateTooltip(AbstractLaunchHistoryAction.java:198)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.initialize(AbstractLaunchHistoryAction.java:168)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.selectionChanged(AbstractLaunchHistoryAction.java:506)
+	at org.eclipse.ui.internal.PluginAction.refreshEnablement(PluginAction.java:206)
+	at org.eclipse.ui.internal.PluginAction.createDelegate(PluginAction.java:126)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:225)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:237)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:462)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4353)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4172)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:382)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:236)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.startOfMarkup(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager.createInfoFromXML(LaunchManager.java:954)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1372)
+	... 48 more
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2014-09-18 05:34:28.247
+!MESSAGE org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 2; The content of elements must consist of well-formed character data or markup. occurred while reading launch configuration file: C:\Users\Aleksandur\workspace\.metadata\.plugins\org.eclipse.debug.core\.launches\FullHousesPrinter.launch.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.startOfMarkup(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchManager.createInfoFromXML(LaunchManager.java:954)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1372)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.debug.internal.core.LaunchManager.isValid(LaunchManager.java:2102)
+	at org.eclipse.debug.internal.core.LaunchManager.verifyConfigurations(LaunchManager.java:2489)
+	at org.eclipse.debug.internal.core.LaunchManager.getAllLaunchConfigurations(LaunchManager.java:1146)
+	at org.eclipse.debug.internal.core.LaunchManager.getLaunchConfigurations(LaunchManager.java:1429)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.restoreHistory(LaunchConfigurationManager.java:572)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.restoreLaunchHistory(LaunchConfigurationManager.java:541)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.loadLaunchHistories(LaunchConfigurationManager.java:1069)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getLaunchHistory(LaunchConfigurationManager.java:1041)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.internalGetHistory(AbstractLaunchHistoryAction.java:540)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.getToolTip(AbstractLaunchHistoryAction.java:233)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.updateTooltip(AbstractLaunchHistoryAction.java:198)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.initialize(AbstractLaunchHistoryAction.java:168)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.selectionChanged(AbstractLaunchHistoryAction.java:506)
+	at org.eclipse.ui.internal.PluginAction.refreshEnablement(PluginAction.java:206)
+	at org.eclipse.ui.internal.PluginAction.createDelegate(PluginAction.java:126)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:225)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:237)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:462)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4353)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4172)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:382)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:236)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
