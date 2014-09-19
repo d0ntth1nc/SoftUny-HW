@@ -28,10 +28,11 @@ public class WebCrawler {
 		HashSet<String> crawledUrls = new HashSet<String>();
 		try (PrintWriter writer = new PrintWriter("crawled-urls.txt", "UTF-8")) {
 			crawlUrl(urlString, crawledUrls, depth, writer);
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+		} catch (FileNotFoundException | UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e1.printStackTrace();
 		}
+		
 	}
 	
 	private static void crawlUrl(String _url, HashSet<String> crawledUrls, int depth, PrintWriter writer) {
@@ -45,9 +46,7 @@ public class WebCrawler {
 			crawledUrls.add(_url);
 		}
 		
-		System.out.println(_url);
 		writer.println(_url);
-		writer.flush();
 		
 		URL url;
 		try {
@@ -59,19 +58,14 @@ public class WebCrawler {
 		String siteContents = getUrlContents(url);
 		if (siteContents != null) {
 			ArrayList<String> links = getLinks(siteContents);
-			for (String link : links) {
+			links.parallelStream().forEach(link -> {
 				String path = link;
 				if (link.indexOf("http") < 0) {
 					path = appendHost(link, url);
 				}
-				final String _path = path;
-				new Thread(new Runnable() {
-					@Override
-					public void run() {
-						crawlUrl(_path, crawledUrls, depth - 1, writer);
-					}
-				}).start();
-			}
+				crawlUrl(path, crawledUrls, depth - 1, writer);
+
+			});
 		}
 	}
 
