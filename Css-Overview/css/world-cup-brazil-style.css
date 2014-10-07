@@ -1,0 +1,126 @@
+main {
+    font-size: 12px;
+    width: 800px;
+    background-color: green;
+    color: black;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+table {
+    background-color: gold;
+    border-radius: 10px;
+    width: 800px;
+    border: 1px solid black;
+}
+
+th {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+td, th {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: white;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: silver;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+td:last-child, th:last-child {
+    border-right: 0;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+td select {
+   width: 40px; 
+}
+
+.active button {
+    background-color: green;
+}
+
+button {
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.place-a-bet {
+    width: 12%;
+}
+
+.dropdown-holder {
+    width: 92px;
+}
+
+#brazil:after {
+    content: url("../img/brazil.png");
+    display: inline;
+}
+
+#mexico:before {
+    content: url("../img/mexico.png");
+}
+
+#spain:after {
+    content: url("../img/spain.png");
+}
+
+#netherlands:before {
+    content: url("../img/netherlands.png");
+}
+
+#italy:after {
+    content: url("../img/italy.png");
+}
+
+#england:before {
+    content: url("../img/england.png");
+}
+
+#argentina:after {
+    content: url("../img/argentina.gif");
+}
+
+#bosnia-and-herz:before {
+    content: url("../img/bosnia-and-herz.gif");
+}
+
+#germany:after {
+    content: url("../img/germany.gif");
+}
+
+#portugal:before {
+    content: url("../img/portugal.gif");
+}
