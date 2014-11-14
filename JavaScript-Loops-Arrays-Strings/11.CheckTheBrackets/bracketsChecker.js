@@ -7,9 +7,15 @@
 */
 
 function checkBrackets(str) {
-    return str.match(/\(/g).length == str.match(/\)/g).length;
+    var replaced = str.replace(/[a-zA-Z]/g, 1);
+    try {
+        eval(replaced);
+        return "correct";
+    } catch (err) {
+        return "incorrect";
+    }
 }
 
-console.log(checkBrackets('( ( a + b ) / 5 – d )') ? "correct" : "incorrect");
-console.log(checkBrackets(') ( a + b ) )') ? "correct" : "incorrect");
-console.log(checkBrackets('( b * ( c + d *2 / ( 2 + ( 12 – c / ( a + 3 ) ) ) )') ? "correct" : "incorrect");
+console.log(checkBrackets('( ( a + b ) / 5 - d )'));
+console.log(checkBrackets(') ( a + b ) )'));
+console.log(checkBrackets('( b * ( c + d *2 / ( 2 + ( 12 - c / ( a + 3 ) ) ) )'));
