@@ -14,7 +14,7 @@ function reverseWordsInString(str) {
         result += ' ';
     }
 
-    return result;
+    return result.trim();
 }
 
 console.log(reverseWordsInString('Hello, how are you.'));
