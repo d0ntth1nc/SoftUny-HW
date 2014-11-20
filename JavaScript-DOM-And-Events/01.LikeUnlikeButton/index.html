@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line / Unlike Button</title>
+</head>
+<body>
+    <button id="like-btn" onclick="changeBtnValue()">Like</button>
+    <script>
+        var likeBtn = document.getElementById("like-btn");
+
+        function changeBtnValue() {
+            var newValue = likeBtn.innerText == "Like" ? "Unlike" : "Like";
+            likeBtn.innerText = newValue;
+        }
+    </script>
+</body>
+</html>

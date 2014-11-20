@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="input" type="text" name="name" value="" />
+
+    <script>
+        var lastValue = "";
+        var regexPattern = new RegExp(/\D+/);
+        document.getElementById("input").addEventListener("input", function (e) {
+
+            var currentValue = e.target.value.toString();
+            if (!regexPattern.test(currentValue)) {
+                lastValue = currentValue;
+            } else {
+                e.target.value = lastValue;
+                e.target.disabled = true;
+                e.target.style.backgroundColor = "red";
+            
+                setTimeout(function () {
+                    e.target.disabled = false;
+                    e.target.style.backgroundColor = "white";
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

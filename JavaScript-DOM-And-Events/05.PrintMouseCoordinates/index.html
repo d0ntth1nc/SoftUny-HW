@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        #log {
+            width: 800px;
+            height: 500px;
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="log"></textarea>
+
+    <script>
+        var log = document.getElementById("log");
+
+        document.body.addEventListener("mousemove", function (e) {
+            e.stopPropagation();
+
+            var message = "X:" + e.pageX + "; Y:" + e.pageY +
+                " Time:" + new Date().toString() + '\n';
+           
+            log.value += message;
+            log.scrollTop = log.scrollHeight;
+        });
+    </script>
+</body>
+</html>
