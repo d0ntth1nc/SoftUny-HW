@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#timePlayedHolder, #pointsHolder {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#gameField {
+    width: 400px;
+    margin: auto;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    color: green;
+}
+
+header {
+    padding: 10px 0;
+}
+
+td {
+    width: 40px;
+    height: 34px;
+    border: 1px solid red;
+}
+
+td[data-value="true"], .active {
+    background-color: yellow;
+}
