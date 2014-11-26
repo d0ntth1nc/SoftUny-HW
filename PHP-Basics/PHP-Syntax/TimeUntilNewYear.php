@@ -1,7 +1,8 @@
 <?php
 date_default_timezone_set("Europe/Sofia");
-$newYear = new DateTime('01/01/2015');
 $now = new DateTime();
+$nextYear = (int)$now->format("Y") + 1;
+$newYear = new DateTime("01/01/$nextYear");
 $difference = $newYear->diff($now);
 
 $hoursLeft = $difference->days * 24 + $difference->h;
