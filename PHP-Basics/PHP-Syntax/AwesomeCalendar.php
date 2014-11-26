@@ -1,8 +1,14 @@
 <?php
+define("TABLE_ROWS", 3);
+define("TABLE_COLS", 4);
+define("DAYS_PER_WEEK", 7);
+define("MAX_WEEKS_COUNT", 6);
+
+$months = array("Януари", "Февруари", "Март", "Април",
+    "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември");
+
 date_default_timezone_set("Europe/Sofia");
 $currentYear = getdate()['year'];
-$months = array("Януари", "Февруари", "Март", "Април",
-"Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември");
 
 function getDayOfWeek($monthIndex, $year) {
     return date("N", strtotime("01-$monthIndex-$year"));
@@ -26,9 +32,9 @@ function getDayOfWeek($monthIndex, $year) {
     <h1><?= $currentYear ?></h1>
 <table class="outer-table">
     <tbody>
-    <?php for ($row = 0, $monthIndex = 0; $row < 3; $row++) { ?>
+    <?php for ($row = 0, $monthIndex = 0; $row < constant("TABLE_ROWS"); $row++) { ?>
         <tr>
-            <?php for ($col = 0; $col < 4; $col++, $monthIndex++) { ?>
+            <?php for ($col = 0; $col < constant("TABLE_COLS"); $col++, $monthIndex++) { ?>
                 <td>
                     <table class="inner-table">
                         <thead>
@@ -49,12 +55,10 @@ function getDayOfWeek($monthIndex, $year) {
                         <?php
                         $monthDays = cal_days_in_month(CAL_GREGORIAN, $monthIndex + 1, $currentYear);
                         $dayOfWeek = getDayOfWeek($monthIndex + 1, $currentYear);
-
-                        $daysCounter = 0;
-                        for ($innerRow = 0; $innerRow < 6; $innerRow++) {
+                        for ($innerRow = 0, $daysCounter = 0; $innerRow < constant("MAX_WEEKS_COUNT"); $innerRow++) {
                         ?>
                             <tr>
-                                <?php for ($innerCol = 0; $innerCol < 7; $innerCol++, $daysCounter++) { ?>
+                                <?php for ($innerCol = 0; $innerCol < constant("DAYS_PER_WEEK"); $innerCol++, $daysCounter++) { ?>
                                     <td>
                                         <?php
                                         $currentDay = $daysCounter - $dayOfWeek + 2;

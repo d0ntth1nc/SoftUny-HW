@@ -2,9 +2,6 @@
 $info = "";
 if (isset($_POST['name']) && isset($_POST['age']) && isset($_POST['sex'])) {
     $info = "My name is $_POST[name]. I am $_POST[age] years old. I am $_POST[sex].";
-    //unset($_POST['name']);
-    //unset($_POST['age']);
-    //unset($_POST['sex']);
 }
 ?>
 
