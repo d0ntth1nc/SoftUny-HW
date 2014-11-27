@@ -15,14 +15,13 @@ printVariableType($array);
 $object = (object) ['property' => 'Here we go'];
 printVariableType($object);
 
-function printVariableType($variable) {
+function printVariableType($variable)
+{
     if (is_numeric($variable)) {
         var_dump($variable);
     } else {
         echo gettype($variable);
     }
-    ?>
-<br/>
-<?php
+    echo "<br/>";
 }
 ?>

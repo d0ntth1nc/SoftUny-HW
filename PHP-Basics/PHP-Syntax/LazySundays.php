@@ -10,8 +10,6 @@ function getSundays($y, $m)
 }
 
 foreach (getSundays(2014, 8) as $sunday) {
-    echo $sunday->format("jS F, Y\n");
-    ?>
-<br/>
-<?php
+    echo $sunday->format("jS F, Y");
+    echo "<br>";
 }
