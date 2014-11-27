@@ -22,7 +22,7 @@ function printResult($digits) {
 }
 
 function findDigits($n) {
-    $array = array();
+    $array = [];
     if ($n < 100) {
         return $array;
     }
