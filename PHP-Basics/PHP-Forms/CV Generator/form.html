@@ -1,0 +1,84 @@
+<form method="post" action="#">
+    <fieldset>
+        <legend>Personal Information</legend>
+        <input type="text" name="fname" placeholder="First Name"><br>
+        <input type="text" name="lname" placeholder="Last Name"><br>
+        <input type="text" name="email" placeholder="Email"><br>
+        <input type="text" name="phoneNumber" placeholder="Phone Number"><br>
+        <label for="female-radio">Female</label>
+        <input type="radio" name="sex" value="female" id="female-radio" checked>
+        <label for="male-radio">Male</label>
+        <input type="radio" name="sex" value="male" id="male-radio"><br>
+        <label for="birth-date-input">Birth Date</label>
+        <input type="text" name="birthDate" placeholder="dd/mm/yyyy" id="birth-date-input"><br>
+        <label for="nationality-select">Nationality</label>
+        <select name="nationality" id="nationality-select">
+            <option value="British">British</option>
+            <option value="Bulgarian">Bulgarian</option>
+            <option value="American">American</option>
+            <option value="Russian">Russian</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>Last Work Position</legend>
+        <label for="companyNameInput">Company Name</label>
+        <input type="text" name="companyName" id="companyNameInput"><br>
+        <label for="workFromInput">From</label>
+        <input type="text" name="workFrom" placeholder="dd/mm/yyyy" id="workFromInput"><br>
+        <label for="workToInput">To</label>
+        <input type="text" name="workTo" placeholder="dd/mm/yyyy" id="workToInput"><br>
+    </fieldset>
+    <fieldset>
+        <legend>Computer Skills</legend>
+        <span>Programming Languages</span>
+        <div id="programmingLanguagesInputs">
+            <div>
+                <input type="text" name="pLangs[]">
+                <select name="pLangLevel[]">
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+        <button type="button" onclick="removeFields('programmingLanguagesInputs')">Remove Language</button>
+        <button type="button" onclick="addFields('programmingLanguagesInputs')">Add Language</button>
+    </fieldset>
+    <fieldset>
+        <legend>Other Skills</legend>
+        <span>Languages</span>
+        <div id="languagesInputs">
+            <div>
+                <input type="text" name="langs[]">
+                <select name="comprehension[]">
+                    <option value="">-Comprehension-</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <select name="readingLevel[]">
+                    <option value="">-Reading-</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <select name="writingLevel[]">
+                    <option value="">-Writing-</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+        <button type="button" onclick="removeFields('languagesInputs')">Remove Language</button>
+        <button type="button" onclick="addFields('languagesInputs')">Add Language</button><br>
+        <span>Driver's License</span><br>
+        <label for="bCat">B</label>
+        <input type="checkbox" name="category[]" value="B" id="bCat">
+        <label for="aCat">A</label>
+        <input type="checkbox" name="category[]" value="A" id="aCat">
+        <label for="cCat">C</label>
+        <input type="checkbox" name="category[]" value="C" id="cCat">
+    </fieldset>
+    <input type="submit" value="Generate CV">
+</form>
