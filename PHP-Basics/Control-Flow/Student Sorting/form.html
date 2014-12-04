@@ -1,0 +1,47 @@
+<form method="post" action="#">
+    <div class="form-row">
+        <div class="form-cell">First name:</div>
+        <div class="form-cell">Second name:</div>
+        <div class="form-cell">Email:</div>
+        <div class="form-cell">Exam score:</div>
+    </div>
+    <div id="inputTemplate" class="form-row">
+        <div class="form-cell">
+            <input type="text" name="firstName[]" placeholder="First name">
+        </div>
+        <div class="form-cell">
+            <input type="text" name="lastName[]" placeholder="Last name">
+        </div>
+        <div class="form-cell">
+            <input type="text" name="email[]" placeholder="Email">
+        </div>
+        <div class="form-cell">
+            <input type="number" name="grade[]" placeholder="Exam Score">
+            <button type="button" onclick="removeRow(this)">-</button>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-cell">
+            <button type="button" onclick="addRow()">+</button>
+        </div>
+        <div class="form-cell">
+            <label for="orderBy">Sort by:</label>
+            <select name="orderBy" id="orderBy">
+                <option value="firstName">First name</option>
+                <option value="lastName">Last name</option>
+                <option value="email">Email</option>
+                <option value="grade">Exam Score</option>
+            </select>
+        </div>
+        <div class="form-cell">
+            <label for="order">Order:</label>
+            <select name="order" id="order">
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+        </div>
+        <div class="form-cell">
+            <input type="submit">
+        </div>
+    </div>
+</form>

@@ -1,2 +1,0 @@
-* Implement dates handler
-* Change html titles

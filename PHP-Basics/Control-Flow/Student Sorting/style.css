@@ -1,0 +1,20 @@
+table, td, th {
+    border: 1px solid black;
+}
+form {
+    display: table;
+    width: 700px;
+    margin: auto;
+}
+input[type="number"] {
+    width: 100px;
+}
+.form-row {
+    display: table-row;
+}
+.form-cell {
+    display:table-cell;
+    padding: 5px 0;
+    border: 1px solid black;
+    text-align: center;
+}
