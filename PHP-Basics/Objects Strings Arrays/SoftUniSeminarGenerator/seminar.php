@@ -19,8 +19,6 @@ if (isset( $_POST[ 'text' ], $_POST[ 'orderBy' ], $_POST[ 'order' ] ) &&
         ];
     }
 
-    echo count($seminars);
-
     usort( $seminars, function( $a, $b )
     {
         if ($_POST[ 'orderBy' ] == 'name') {
