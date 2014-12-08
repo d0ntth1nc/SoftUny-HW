@@ -8,6 +8,7 @@ if (isset( $_GET[ 'words' ] ) && !empty( $_GET[ 'words' ] )) {
         }
         $words[ strtolower( $word ) ]++;
     }
+    rsort( $words );
 }
 ?>
 <!DOCTYPE html>
