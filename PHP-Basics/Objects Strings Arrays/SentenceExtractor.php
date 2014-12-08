@@ -14,10 +14,10 @@
     <?php
     if (isset( $_GET[ 'text' ], $_GET[ 'word' ] ) &&
         !empty( $_GET[ 'text' ] ) && !empty( $_GET[ 'word' ] )):
-        $sentences = preg_split( '/(\.|!|\?)/', $_GET[ 'text' ] );
-        $validSentences = array_filter( $sentences, function( $val )
+        $sentences = [];
+        preg_match_all( "/\s*[^.!?]+[.!?]/", $_GET[ 'text' ], $sentences );
+        $validSentences = array_filter( $sentences[ 0 ], function( $val )
         {
-            if (!preg_match( '/.|!|\?/', $val )) return false;
             $word = $_GET[ 'word' ];
             return strlen( $val ) && preg_match( "/[^a-zA-Z]".$word."[^a-zA-Z]/", $val );
         });
