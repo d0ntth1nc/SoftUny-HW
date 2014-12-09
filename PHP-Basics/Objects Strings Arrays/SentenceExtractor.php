@@ -19,7 +19,7 @@
         $validSentences = array_filter( $sentences[ 0 ], function( $val )
         {
             $word = $_GET[ 'word' ];
-            return strlen( $val ) && preg_match( "/[^a-zA-Z]".$word."[^a-zA-Z]/", $val );
+            return strlen( $val ) && preg_match( "/\b$word\b/i", $val );
         });
         foreach ($validSentences as $sentence): ?>
             <p><?= htmlentities( $sentence ) ?></p>
