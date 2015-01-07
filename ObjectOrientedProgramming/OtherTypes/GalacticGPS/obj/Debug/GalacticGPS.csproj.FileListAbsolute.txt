@@ -1,0 +1,5 @@
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\GalacticGPS\bin\Debug\GalacticGPS.exe.config
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\GalacticGPS\bin\Debug\GalacticGPS.exe
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\GalacticGPS\bin\Debug\GalacticGPS.pdb
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\GalacticGPS\obj\Debug\GalacticGPS.exe
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\GalacticGPS\obj\Debug\GalacticGPS.pdb

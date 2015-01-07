@@ -1,7 +1,7 @@
 ﻿using Novacode;
 using System.Drawing;
 
-namespace WordDocumentGenerator
+namespace OtherTypes
 {
     class Generator
     {

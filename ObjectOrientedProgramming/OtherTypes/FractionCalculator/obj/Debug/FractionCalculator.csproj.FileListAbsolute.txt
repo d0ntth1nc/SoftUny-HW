@@ -1,0 +1,6 @@
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\bin\Debug\FractionCalculator.exe.config
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\bin\Debug\FractionCalculator.exe
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\bin\Debug\FractionCalculator.pdb
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\obj\Debug\FractionCalculator.csprojResolveAssemblyReference.cache
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\obj\Debug\FractionCalculator.exe
+c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\FractionCalculator\obj\Debug\FractionCalculator.pdb
