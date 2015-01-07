@@ -9,8 +9,8 @@ namespace GenericListProject
                     AttributeTargets.Method)]
     internal class VersionAttribute : Attribute
     {
-        public int Major { get; set; }
-        public int Minor { get; set; }
+        public int Major { get; private set; }
+        public int Minor { get; private set; }
 
         public VersionAttribute(int major, int minor)
         {
