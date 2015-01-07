@@ -106,6 +106,28 @@ namespace WordDocumentGenerator
             doc.InsertTable(table);
         }
 
+        private static void CreateFooter(DocX doc)
+        {
+            var footerFormat = new Formatting();
+            footerFormat.FontFamily = new FontFamily("Tahoma");
+
+            footerFormat.Size = 10D;
+            var p = doc.InsertParagraph("The top 3 teams will receive a ", false, footerFormat);
+            p.Alignment = Alignment.center;
+
+            footerFormat.Bold = true;
+            p.InsertText("SPECTACULAR ", false, footerFormat);
+
+            footerFormat.Bold = false;
+            p.InsertText("prize:\n");
+
+            footerFormat.Bold = true;
+            footerFormat.UnderlineStyle = UnderlineStyle.singleLine;
+            footerFormat.FontColor = System.Drawing.Color.MediumBlue;
+            footerFormat.Size = 14D;
+            p.InsertText("A HANDSHAKE FROM NAKOV", false, footerFormat);
+        }
+
         static void Main(string[] args)
         {
             var doc = DocX.Create("softuni_oop_game_contest.docx");
@@ -116,15 +138,18 @@ namespace WordDocumentGenerator
             CreateList(doc);
             doc.InsertParagraph("\n");
             CreateTable(doc);
+            doc.InsertParagraph("\n");
+            CreateFooter(doc);
 
             try
             {
                 doc.Save();
+                System.Console.WriteLine("Done!");
             }
             catch (System.IO.IOException ex)
             {
                 System.Console.WriteLine(ex.Message);
             }
-        }
+        } 
     }
 }
