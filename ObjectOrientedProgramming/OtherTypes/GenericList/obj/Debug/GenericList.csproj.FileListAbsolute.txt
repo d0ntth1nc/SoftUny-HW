@@ -7,3 +7,6 @@ c:\users\aleksandur\documents\visual studio 2013\Projects\WordDocumentGenerator\
 C:\Users\Aleksandur\Documents\Visual Studio 2013\Projects\OtherTypes\GenericList\bin\Debug\GenericList.exe.config
 C:\Users\Aleksandur\Documents\Visual Studio 2013\Projects\OtherTypes\GenericList\obj\Debug\GenericList.exe
 C:\Users\Aleksandur\Documents\Visual Studio 2013\Projects\OtherTypes\GenericList\obj\Debug\GenericList.pdb
+D:\Programming\SoftUny-HW\ObjectOrientedProgramming\OtherTypes\GenericList\bin\Debug\GenericList.exe.config
+D:\Programming\SoftUny-HW\ObjectOrientedProgramming\OtherTypes\GenericList\obj\Debug\GenericList.exe
+D:\Programming\SoftUny-HW\ObjectOrientedProgramming\OtherTypes\GenericList\obj\Debug\GenericList.pdb
