@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilderExtensions", "StringBuilderExtensions\StringBuilderExtensions.csproj", "{5646578F-167F-4F4D-BAA0-EB70CC254038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLINQExtensionMethods", "CustomLINQExtensionMethods\CustomLINQExtensionMethods.csproj", "{4B7060A2-CC69-4DFF-953E-EA0B334B3BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassStudent", "ClassStudent\ClassStudent.csproj", "{C6AA9A2E-5884-4318-ADEE-17710D934477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQToExcel", "LINQToExcel\LINQToExcel.csproj", "{23BA6F68-1787-410E-A98E-345E701CF32C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5646578F-167F-4F4D-BAA0-EB70CC254038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5646578F-167F-4F4D-BAA0-EB70CC254038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5646578F-167F-4F4D-BAA0-EB70CC254038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5646578F-167F-4F4D-BAA0-EB70CC254038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7060A2-CC69-4DFF-953E-EA0B334B3BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7060A2-CC69-4DFF-953E-EA0B334B3BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7060A2-CC69-4DFF-953E-EA0B334B3BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7060A2-CC69-4DFF-953E-EA0B334B3BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6AA9A2E-5884-4318-ADEE-17710D934477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6AA9A2E-5884-4318-ADEE-17710D934477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6AA9A2E-5884-4318-ADEE-17710D934477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6AA9A2E-5884-4318-ADEE-17710D934477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BA6F68-1787-410E-A98E-345E701CF32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BA6F68-1787-410E-A98E-345E701CF32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BA6F68-1787-410E-A98E-345E701CF32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BA6F68-1787-410E-A98E-345E701CF32C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
