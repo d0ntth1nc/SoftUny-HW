@@ -1,0 +1,12 @@
+﻿<Window x:Class="CompanyHierarchy.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Button x:Name="importDataBtn" Content="Import Data" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="89" Height="42"/>
+        <Button x:Name="exportToWordBtn" Content="Export to Word" HorizontalAlignment="Left" Margin="123,19,0,0" VerticalAlignment="Top" Width="112" Height="42"/>
+        <Button x:Name="exportToDropBoxBtn" Content="Export to DropBox" HorizontalAlignment="Left" Margin="253,19,0,0" VerticalAlignment="Top" Width="128" Height="42"/>
+        <Button x:Name="aboutBtn" Content="About" HorizontalAlignment="Left" Margin="402,19,0,0" VerticalAlignment="Top" Width="99" Height="42"/>
+        <Frame NavigationUIVisibility="Hidden" x:Name="pagesFrame" Margin="20,79,27,29" />
+    </Grid>
+</Window>
