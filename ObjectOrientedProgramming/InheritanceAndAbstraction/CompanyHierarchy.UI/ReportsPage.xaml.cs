@@ -39,57 +39,9 @@ namespace CompanyHierarchy.UI
         private void ShowDetails(object sender, SelectionChangedEventArgs e)
         {
             this.flowDocument.Blocks.Clear();
-
-            var personalInfoParagraph = new Paragraph();
             var employee = this.employees.First(x => x.FullName.Equals(e.AddedItems[0]));
-            personalInfoParagraph.Inlines.Add(new Run("Employee info:\n"));
-            personalInfoParagraph.Inlines.Add(new Run(string.Format("ID: {0}\n", employee.Id)));
-            personalInfoParagraph.Inlines.Add(new Run(string.Format("Name: {0}\n", employee.FullName)));
-            personalInfoParagraph.Inlines.Add(new Run(string.Format("Salary: {0:0.00}lv\n", employee.Salary)));
-            personalInfoParagraph.Inlines.Add(new Run(string.Format("Department: {0}\n", employee.Department)));
-            if (employee is ICustomer)
-            {
-                personalInfoParagraph.Inlines.Add(new Run(string.Format("Net purchase amount: {0}\n",
-                    (employee as ICustomer).NetPurchaseAmount)));
-            }
+            var personalInfoParagraph = new Paragraph(new Run(employee.ToString()));
             this.flowDocument.Blocks.Add(personalInfoParagraph);
-
-            if (employee is IManager)
-            {
-                var employeesParagraph = new Paragraph();
-                var sb = new StringBuilder("Employees under command:\n");
-                int index = 1;
-                foreach (Employee _employee in (employee as IManager).Empoyees)
-                {
-                    sb.AppendFormat("{0}. {1}\n", index++, _employee.FullName);
-                }
-                employeesParagraph.Inlines.Add(new Run(sb.ToString()));
-                this.flowDocument.Blocks.Add(employeesParagraph);
-            }
-            else if (employee is IDeveloper)
-            {
-                var projectsParagraph = new Paragraph();
-                var sb = new StringBuilder("Projects:\n");
-                int index = 1;
-                foreach (var project in (employee as IDeveloper).Projects)
-                {
-                    sb.AppendFormat("{0}. {1}\n", index++, project);
-                }
-                projectsParagraph.Inlines.Add(new Run(sb.ToString()));
-                this.flowDocument.Blocks.Add(projectsParagraph);
-            }
-            else if (employee is ISalesEmployee)
-            {
-                var salesParagraph = new Paragraph();
-                var sb = new StringBuilder("Sales:\n");
-                int index = 1;
-                foreach (var sale in (employee as ISalesEmployee).Sales)
-                {
-                    sb.AppendFormat("{0}. {1}\n", index++, sale);
-                }
-                salesParagraph.Inlines.Add(new Run(sb.ToString()));
-                this.flowDocument.Blocks.Add(salesParagraph);
-            }
         }
     }
 }

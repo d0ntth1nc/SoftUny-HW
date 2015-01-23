@@ -45,8 +45,6 @@ namespace CompanyHierarchy
             {
                 Console.WriteLine(employee);
             }
-
-            Console.WriteLine(Convert.ToBase64String(BitConverter.GetBytes(123213.2414)));
         }
     }
 }

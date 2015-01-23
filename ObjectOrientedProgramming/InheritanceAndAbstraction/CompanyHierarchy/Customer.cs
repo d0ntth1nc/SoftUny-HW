@@ -27,7 +27,7 @@ namespace CompanyHierarchy
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(", Net purchase amount");
+            return base.ToString() + string.Format("Net purchase amount: {0}\n", this.NetPurchaseAmount);
         }
     }
 }

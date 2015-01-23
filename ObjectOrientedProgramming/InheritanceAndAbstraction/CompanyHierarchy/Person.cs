@@ -52,7 +52,7 @@ namespace CompanyHierarchy
 
         public override string ToString()
         {
-            return string.Format("{1} {2}", this.Id, this.FirstName, this.LastName);
+            return string.Format("ID: {0}\nFirstName: {1}\nLastName: {2}\n", this.Id, this.FirstName, this.LastName);
         }
     }
 }

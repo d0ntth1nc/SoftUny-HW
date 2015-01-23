@@ -12,5 +12,18 @@ namespace CompanyHierarchy
         {
             this.Empoyees = new List<IEmployee>(employees);
         }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder(base.ToString());
+            sb.AppendLine("Employee type: Manager\n");
+            sb.AppendLine("Employees under control:");
+            int index = 1;
+            foreach (var employee in this.Empoyees)
+            {
+                sb.AppendFormat("{0}. {1}\n", index++, employee.FullName);
+            }
+            return sb.ToString();
+        }
     }
 }

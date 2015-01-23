@@ -26,7 +26,7 @@ namespace CompanyHierarchy
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(", Salary = {0}, Department = {1}", this.Salary, this.Department.ToString());
+            return base.ToString() + string.Format("Salary: {0}\nDepartment: {1}\n", this.Salary, this.Department.ToString());
         }
     }
 }
