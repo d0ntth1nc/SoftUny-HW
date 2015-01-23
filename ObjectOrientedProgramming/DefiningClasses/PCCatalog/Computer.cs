@@ -39,11 +39,7 @@ namespace PCCatalog
         {
             get
             {
-                return this.components.Aggregate
-                    (
-                        0M,
-                        (total, component) => total + component.Price
-                    );
+                return this.components.Aggregate(0M, (total, component) => total + component.Price );
             }
         }
 

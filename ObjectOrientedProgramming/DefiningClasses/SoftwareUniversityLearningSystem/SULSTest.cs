@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SoftwareUniversityLearningSystem
 {
-    class Program
+    class SULSTest
     {
         static void Main(string[] args)
         {
@@ -41,6 +41,20 @@ namespace SoftwareUniversityLearningSystem
                 Console.WriteLine("Average grade: {0:0.00}", currentStudent.AvgGrade);
                 Console.WriteLine("Current course: {0}", currentStudent.CurrentCourse);
                 Console.WriteLine();
+            }
+
+            index = 1;
+            foreach (var juniorTrainer in persons.Where(x => x is Trainer))
+            {
+                if (juniorTrainer is JuniorTrainer)
+                {
+                    (juniorTrainer as JuniorTrainer).CreateCourse("#" + index++);
+                }
+                else if (juniorTrainer is SeniorTrainer)
+                {
+                    (juniorTrainer as SeniorTrainer).DeleteCourse("#" + index++);
+                }
+
             }
         }
     }
