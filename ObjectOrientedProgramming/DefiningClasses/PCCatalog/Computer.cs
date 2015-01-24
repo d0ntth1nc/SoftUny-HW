@@ -7,15 +7,25 @@ namespace PCCatalog
 {
     internal class Computer
     {
-        private string name;
-        private List<Component> components;
-        private decimal price;
+        private string name = string.Empty;
+        private List<Component> components = new List<Component>();
+        private decimal price = 0;
 
-        public Computer(string name, int price = 0, params Component[] components)
+        public Computer(string name)
         {
             this.Name = name;
-            this.components = new List<Component>(components);
+        }
+
+        public Computer(string name, decimal price)
+            : this (name)
+        {
             this.Price = price;
+        }
+        
+        public Computer(string name, params Component[] components)
+            : this(name)
+        {
+            this.components.AddRange(components);
         }
 
         public string Name
