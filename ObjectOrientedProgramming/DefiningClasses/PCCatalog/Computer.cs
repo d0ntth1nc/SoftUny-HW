@@ -9,17 +9,13 @@ namespace PCCatalog
     {
         private string name;
         private List<Component> components;
+        private decimal price;
 
-        public Computer(string name)
-        {
-            this.Name = name;
-            this.components = new List<Component>();
-        }
-
-        public Computer(string name, params Component[] components)
+        public Computer(string name, int price = 0, params Component[] components)
         {
             this.Name = name;
             this.components = new List<Component>(components);
+            this.Price = price;
         }
 
         public string Name
@@ -39,7 +35,13 @@ namespace PCCatalog
         {
             get
             {
-                return this.components.Aggregate(0M, (total, component) => total + component.Price );
+                if (this.price > 0) return this.price;
+                else return this.components.Aggregate(0M, (total, component) => total + component.Price );
+            }
+            set
+            {
+                if (value < 0) throw new ArgumentOutOfRangeException("Price cannot be negative number!");
+                this.price = value;
             }
         }
 
