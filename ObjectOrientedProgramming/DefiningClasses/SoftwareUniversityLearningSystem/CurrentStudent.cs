@@ -8,5 +8,10 @@ namespace SoftwareUniversityLearningSystem
             : base(firstName, lastName, age, studentNumber, avgGrade) { }
 
         public int CurrentCourse { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format("\nCurrent course: {0}", this.CurrentCourse);
+        }
     }
 }

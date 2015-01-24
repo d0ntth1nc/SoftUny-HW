@@ -33,5 +33,10 @@ namespace SoftwareUniversityLearningSystem
                 this.studentNumber = value;
             }
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format("\nStudent number: {0}\nAverage grade: {1}", this.StudentNumber, this.AvgGrade);
+        }
     }
 }

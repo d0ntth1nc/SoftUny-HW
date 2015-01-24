@@ -43,5 +43,10 @@ namespace SoftwareUniversityLearningSystem
                 if (value < 0) throw new ArgumentOutOfRangeException("Age cannot be negative number!");
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Name: {0} {1}\nAge: {2}", this.FirstName, this.LastName, this.Age);
+        }
     }
 }

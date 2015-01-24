@@ -28,18 +28,14 @@ namespace SoftwareUniversityLearningSystem
             persons.Add(new OnsiteStudent("Prosto", "Student", random.Next(1, 60), random.Next(3400, 3500), 3.00F, 30));
 
             var currentStudents = persons
-                .Where(student => student.GetType().IsSubclassOf(typeof(CurrentStudent)))
+                .Where(student => student is CurrentStudent)
                 .OrderBy(student => ((CurrentStudent)student).AvgGrade);
             int index = 1;
             foreach (var item in currentStudents)
             {
                 var currentStudent = item as CurrentStudent;
                 Console.WriteLine("Current Student #{0}", index++);
-                Console.WriteLine("Name: {0} {1}", currentStudent.FirstName, currentStudent.LastName);
-                Console.WriteLine("Age: {0}", currentStudent.Age);
-                Console.WriteLine("Student number: {0}", currentStudent.StudentNumber);
-                Console.WriteLine("Average grade: {0:0.00}", currentStudent.AvgGrade);
-                Console.WriteLine("Current course: {0}", currentStudent.CurrentCourse);
+                Console.WriteLine(currentStudent);
                 Console.WriteLine();
             }
 

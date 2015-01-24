@@ -15,12 +15,17 @@ namespace SoftwareUniversityLearningSystem
 
         public int VisitsCount
         {
-            get { return this.VisitsCount; }
+            get { return this.visitsCount; }
             set
             {
                 if (value < 0) throw new ArgumentOutOfRangeException("This value cannot be negative number!");
                 this.visitsCount = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format("\nVisits count: {0}", this.VisitsCount);
         }
     }
 }
