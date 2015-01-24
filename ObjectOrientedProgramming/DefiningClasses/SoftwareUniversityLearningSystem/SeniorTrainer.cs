@@ -9,6 +9,7 @@ namespace SoftwareUniversityLearningSystem
 
         public void DeleteCourse(string name)
         {
+            if (string.IsNullOrEmpty(name)) throw new ArgumentException("Course name cannot be null or empty!");
             Console.WriteLine("Deleted course {0}", name);
         }
     }
