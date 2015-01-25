@@ -9,10 +9,7 @@ namespace _05.BitArray
         {
             var bitArr = new BitArray(100000);
             bitArr[99999] = 1;
-            Console.WriteLine("Wait!");
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            //Console.WriteLine(bitArr);
-            Console.WriteLine("лв");
+            Console.WriteLine(bitArr);
         }
     }
 }
