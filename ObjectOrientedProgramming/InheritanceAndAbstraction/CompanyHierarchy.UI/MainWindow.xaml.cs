@@ -64,7 +64,7 @@ namespace CompanyHierarchy.UI
         private void ShowAboutBox(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("This application generates hard-coded reports!\n" +
-                "It can export the reports as word file\nand upload them to DropBox account!");
+                "It can export the reports as word file\and upload them to DropBox account!");
         }
 
         private void ExportToWordFile(object sender, RoutedEventArgs e)
