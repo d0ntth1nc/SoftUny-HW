@@ -34,7 +34,7 @@ namespace LaptopShop
             get { return this.model; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "Model");
                 this.model = value;
             }
         }
@@ -44,7 +44,7 @@ namespace LaptopShop
             get { return this.price; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "Price");
                 this.price = value;
             }
         }
@@ -54,7 +54,7 @@ namespace LaptopShop
             get { return this.manufacturer; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "Manufacturer");
                 this.manufacturer = value;
             }
         }
@@ -64,7 +64,7 @@ namespace LaptopShop
             get { return this.processor; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "Processor");
                 this.processor = value;
             }
         }
@@ -74,7 +74,7 @@ namespace LaptopShop
             get { return this.ram; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "RAM");
                 this.ram = value;
             }
         }
@@ -84,7 +84,7 @@ namespace LaptopShop
             get { return this.graphicCard; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "GraphicCard");
                 this.graphicCard = value;
             }
         }
@@ -94,7 +94,7 @@ namespace LaptopShop
             get { return this.hdd; }
             set 
             {
-                CheckInput(value);
+                CheckInput(value, "HDD");
                 this.hdd = value;
             }
         }
@@ -104,7 +104,7 @@ namespace LaptopShop
             get { return this.screen; }
             set
             {
-                CheckInput(value);
+                CheckInput(value, "Screen");
                 this.screen = value;
             }
         }
@@ -129,7 +129,7 @@ namespace LaptopShop
             return sb.ToString();
         }
 
-        private void CheckInput(object value)
+        private void CheckInput(object value, string propName)
         {
             if (value != null)
             {
@@ -137,14 +137,14 @@ namespace LaptopShop
                 {
                     if (String.IsNullOrEmpty((string)value))
                     {
-                        throw new ArgumentException();
+                        throw new ArgumentException(string.Format("{0} cannot be null or empty!", propName));
                     }
                 }
                 else
                 {
-                    if (Convert.ToInt32(value) < 0)
+                    if (Convert.ToDecimal(value) < 0)
                     {
-                        throw new ArgumentOutOfRangeException();
+                        throw new ArgumentOutOfRangeException(string.Format("{0} cannot be negative number!", propName));
                     }
                 }
             }
