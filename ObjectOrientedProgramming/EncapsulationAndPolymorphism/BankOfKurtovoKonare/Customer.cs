@@ -1,7 +1,7 @@
 ﻿
 namespace BankOfKurtovoKonare
 {
-    public class Customer
+    public class Customer : BankOfKurtovoKonare.ICustomer
     {
         public Customer(string name, CustomerType type)
         {

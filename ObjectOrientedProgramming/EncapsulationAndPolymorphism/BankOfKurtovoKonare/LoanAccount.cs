@@ -2,7 +2,7 @@
 using System;
 namespace BankOfKurtovoKonare
 {
-    public class LoanAccount : Account
+    public class LoanAccount : Account, BankOfKurtovoKonare.ILoanAccount
     {
         public LoanAccount(Customer customer, decimal balance = 0, double interestRate = 0)
             : base(customer, balance, interestRate) { }

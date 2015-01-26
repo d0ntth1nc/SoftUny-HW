@@ -2,7 +2,7 @@
 
 namespace BankOfKurtovoKonare
 {
-    public abstract class Account
+    public abstract class Account : BankOfKurtovoKonare.IAccount
     {
         private decimal balance = 0;
         private double interestRate = 0;

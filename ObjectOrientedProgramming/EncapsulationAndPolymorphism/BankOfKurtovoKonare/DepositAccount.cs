@@ -2,7 +2,7 @@
 
 namespace BankOfKurtovoKonare
 {
-    public class DepositAccount : Account
+    public class DepositAccount : Account, BankOfKurtovoKonare.IDepositAccount
     {
         public DepositAccount(Customer customer, decimal balance = 0, double interestRate = 0)
             : base(customer, balance, interestRate) { }
