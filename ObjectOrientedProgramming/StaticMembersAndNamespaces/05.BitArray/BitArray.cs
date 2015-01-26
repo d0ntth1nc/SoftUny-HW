@@ -9,7 +9,7 @@ namespace _05.BitArray
         public const int MIN_SIZE = 1;
         public const int MAX_SIZE = 100000;
 
-        private bool[] bits;
+        private byte[] bits;
 
         public BitArray(int size)
         {
@@ -19,12 +19,12 @@ namespace _05.BitArray
                     string.Format("Bit array size must be less than or equal {0} and more than or equal {1}",
                         MAX_SIZE, MIN_SIZE));
             }
-            this.bits = new bool[size];
+            this.bits = new byte[size];
         }
 
-        public int this[int index]
+        public byte this[int index]
         {
-            get { return this.bits[index] == true ? 1 : 0; }
+            get { return this.bits[index]; }
             set
             {
                 if (value != 0 && value != 1)
@@ -36,7 +36,7 @@ namespace _05.BitArray
                     throw new IndexOutOfRangeException(
                         string.Format("Invalid index! Please enter index between {0} and {1}", 0, this.bits.Length - 1));
                 }
-                this.bits[index] = value == 1 ? true : false;
+                this.bits[index] = value;
             }
         }
 
