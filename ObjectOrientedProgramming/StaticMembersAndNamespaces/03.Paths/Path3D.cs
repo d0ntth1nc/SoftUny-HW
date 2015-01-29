@@ -1,4 +1,5 @@
 ﻿using _01.Point3D;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -24,6 +25,12 @@ namespace _03.Paths
         public Point3D[] Points
         {
             get { return this.path.ToArray(); }
+        }
+
+        public void AddPoint(Point3D point)
+        {
+            if (point == null) throw new ArgumentNullException("Cannot add null point");
+            this.path.Add(point);
         }
     }
 }
