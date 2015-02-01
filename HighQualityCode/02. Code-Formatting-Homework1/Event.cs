@@ -53,4 +53,3 @@ internal class Event : IComparable
 		return toString.ToString();
 	}
 }
-
