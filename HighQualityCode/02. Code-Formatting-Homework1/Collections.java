@@ -15,86 +15,86 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public class Collections {
-    // Suppresses default constructor, ensuring non-instantiability.
-    private Collections() { }
+	// Suppresses default constructor, ensuring non-instantiability.
+	private Collections() { }
 
-    private static final int BINARYSEARCH_THRESHOLD = 5000;
-    private static final int REVERSE_THRESHOLD = 18;
-    private static final int SHUFFLE_THRESHOLD = 5;
-    private static final int FILL_THRESHOLD = 25;
-    private static final int ROTATE_THRESHOLD = 100;
-    private static final int COPY_THRESHOLD = 10;
-    private static final int REPLACEALL_THRESHOLD = 11;
-    private static final int INDEXOFSUBLIST_THRESHOLD = 35;
+	private static final int BINARYSEARCH_THRESHOLD = 5000;
+	private static final int REVERSE_THRESHOLD = 18;
+	private static final int SHUFFLE_THRESHOLD = 5;
+	private static final int FILL_THRESHOLD = 25;
+	private static final int ROTATE_THRESHOLD = 100;
+	private static final int COPY_THRESHOLD = 10;
+	private static final int REPLACEALL_THRESHOLD = 11;
+	private static final int INDEXOFSUBLIST_THRESHOLD = 35;
 
-    @SuppressWarnings("unchecked")
-    public static <T extends Comparable<? super T>> void sort(List<T> list) {
+	@SuppressWarnings("unchecked")
+	public static <T extends Comparable<? super T>> void sort(List<T> list) {
 		Object[] listAsArray = list.toArray();
-        Arrays.sort(listAsArray);
+		Arrays.sort(listAsArray);
 		
-        ListIterator<T> iterator = list.listIterator();
-        for (int j = 0; j < listAsArray.length; j++) {
-            iterator.next();
+		ListIterator<T> iterator = list.listIterator();
+		for (int j = 0; j < listAsArray.length; j++) {
+			iterator.next();
 			iterator.set((T)listAsArray[j]);
-        }
-    }
+		}
+	}
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
 		Object[] listAsArray = list.toArray();
 		Arrays.sort(listAsArray, (Comparator)comparator);
 		
 		ListIterator<T> iterator = list.listIterator();
-        for (int j = 0; j < listAsArray.length; j++) {
-            iterator.next();
+		for (int j = 0; j < listAsArray.length; j++) {
+			iterator.next();
 			iterator.set((T)listAsArray[j]);
-        }
-    }
+		}
+	}
 
-    public static <T> int
+	public static <T> int
 	binarySearch(List<? extends Comparable<? super T>> list, T key) 
 	{
-        if (list instanceof RandomAccess ||
+		if (list instanceof RandomAccess ||
 			list.size()<BINARYSEARCH_THRESHOLD) {
 			return Collections.indexedBinarySearch(list, key);
 		} else {
 			return Collections.iteratorBinarySearch(list, key);
 		}
-    }
+	}
 
-    private static <T> int
+	private static <T> int
 	indexedBinarySearch(List<? extends Comparable<? super T>> list, T key) {
 		int low = 0;
 		int high = list.size() - 1;
 
-        while (low <= high) {
-            int mid = (low + high) >>> 1;
-            Comparable<? super T> midVal = list.get(mid);
+		while (low <= high) {
+			int mid = (low + high) >>> 1;
+			Comparable<? super T> midVal = list.get(mid);
 			int cmp = midVal.compareTo(key);
 
-            if(cmp < 0) {
+			if(cmp < 0) {
 				low = mid + 1;
 			} else if (cmp > 0) {
 				high = mid - 1;
 			} else {
 				return mid; // key found
 			}
-        }
+		}
 		
-        return -(low + 1);  // key not found
-    }
+		return -(low + 1);  // key not found
+	}
 
-    private static <T> int
+	private static <T> int
 	iteratorBinarySearch(List<? extends Comparable<? super T>> list, T key) {
-        int low = 0;
+		int low = 0;
 		int high = list.size() - 1;
-        ListIterator<? extends Comparable<? super T>> iterator = list.listIterator();
-        while (low <= high) {
+		ListIterator<? extends Comparable<? super T>> iterator = list.listIterator();
+		while (low <= high) {
 			int mid = (low + high) >>> 1;
-            Comparable<? super T> midVal = get(iterator,mid);
+			Comparable<? super T> midVal = get(iterator,mid);
 			int cmp = midVal.compareTo(key);
 			
-            if (cmp < 0) {
+			if (cmp < 0) {
 				low = mid + 1;
 			} else if (cmp   > 0) {
 				high = mid - 1;
@@ -105,11 +105,11 @@ public class Collections {
 		return -(low + 1); // key not found
 	}
 
-    private static <T> T get(ListIterator<? extends T> i, int index) {
+	private static <T> T get(ListIterator<? extends T> i, int index) {
 		T obj = null;
-        int pos = i.nextIndex();
+		int pos = i.nextIndex();
 		if (pos <= index) {
-            do {
+			do {
 				obj = i.next();
 			} while (pos++ < index);
 		} else {
