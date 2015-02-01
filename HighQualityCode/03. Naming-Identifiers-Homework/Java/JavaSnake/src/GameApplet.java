@@ -4,22 +4,26 @@ import java.awt.Graphics;
 
 @SuppressWarnings("serial")
 public class GameApplet extends Applet {
-	private Igr1t1 game;
-	kop4eHvashta4 IH;
-	
-	public void init(){
-		game = new Igr1t1();
-		game.setPreferredSize(new Dimension(800, 650));
-		game.setVisible(true);
-		game.setFocusable(true);
-		this.add(game);
-		this.setVisible(true);
-		this.setSize(new Dimension(800, 650));
-		IH = new kop4eHvashta4(game);
-	}
-	
-	public void paint(Graphics g){
-		this.setSize(new Dimension(800, 650));
-	}
+    private GameWindow game;
+    private KeyHandler keyHandler;
 
+    @Override
+    public void init() {
+        this.game = new GameWindow();
+        this.game.setPreferredSize(new Dimension(800, 650));
+        this.game.setVisible(true);
+        this.game.setFocusable(true);
+        this.add(this.game);
+        this.setVisible(true);
+        this.setSize(new Dimension(800, 650));
+        this.keyHandler = new KeyHandler(this.game);
+    }
+    
+    public KeyHandler getKeyHandler() {
+        return this.keyHandler;
+    }
+
+    public void setSize(Graphics g) {
+        this.setSize(new Dimension(800, 650));
+    }
 }

@@ -7,148 +7,6 @@ namespace MineSweeper
 {
     public class MineSweeper
     {
-        
-        private static void Main(string[] args)
-        {
-            const int MAX_MOVES = 35;
-
-            char[,] gameField = CreateGameField();
-            char[,] bombsField = CreateBombsField();
-
-            int counter = 0;
-            bool hasBombBlown = false;
-            List<Rating> bestPlayers = new List<Rating>(6);
-            int row = 0;
-            int col = 0;
-            
-            bool firstFlag = true;
-            bool secondFlag = false;
-
-            string command = String.Empty;
-            do
-            {
-                if (firstFlag)
-                {
-                    Console.WriteLine(
-                        "Hajde da igraem na “Mini4KI”. Probvaj si kasmeta da otkriesh poleteta bez mini4ki."
-                        + " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
-                    PrintField(gameField);
-                    firstFlag = false;
-                }
-
-                Console.Write("Daj red i kolona : ");
-                command = Console.ReadLine().Trim();
-                if (command.Length >= 3)
-                {
-                    if (int.TryParse(command[0].ToString(), out row) &&
-                        int.TryParse(command[2].ToString(), out col) &&
-                        row <= gameField.GetLength(0) &&
-                        col <= gameField.GetLength(1))
-                    {
-                        command = "turn";
-                    }
-                }
-
-                switch (command)
-                {
-                    case "top":
-                        PrintChart(bestPlayers);
-                        break;
-                    case "restart":
-                        gameField = CreateGameField();
-                        bombsField = CreateBombsField();
-                        PrintField(gameField);
-                        hasBombBlown = false;
-                        firstFlag = false;
-                        break;
-                    case "exit":
-                        Console.WriteLine("4a0, 4a0, 4a0!");
-                        break;
-                    case "turn":
-                        if (bombsField[row, col] != '*')
-                        {
-                            if (bombsField[row, col] == '-')
-                            {
-                                MakeTurn(gameField, bombsField, row, col);
-                                counter++;
-                            }
-
-                            if (MAX_MOVES == counter)
-                            {
-                                secondFlag = true;
-                            }
-                            else
-                            {
-                                PrintField(gameField);
-                            }
-                        }
-                        else
-                        {
-                            hasBombBlown = true;
-                        }
-
-                        break;
-                    default:
-                        Console.WriteLine("\nGreshka! nevalidna Komanda\n");
-                        break;
-                }
-
-                if (hasBombBlown)
-                {
-                    PrintField(bombsField);
-                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " + "Daj si niknejm: ", counter);
-                    string nickName = Console.ReadLine();
-                    var playerRating = new Rating(nickName, counter);
-                    if (bestPlayers.Count < 5)
-                    {
-                        bestPlayers.Add(playerRating);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < bestPlayers.Count; i++)
-                        {
-                            if (bestPlayers[i].Score < playerRating.Score)
-                            {
-                                bestPlayers.Insert(i, playerRating);
-                                bestPlayers.RemoveAt(bestPlayers.Count - 1);
-                                break;
-                            }
-                        }
-                    }
-
-                    bestPlayers.Sort((rating1, rating2) => rating2.PlayerName.CompareTo(rating1.PlayerName));
-                    bestPlayers.Sort((rating1, rating2) => rating2.Score.CompareTo(rating1.Score));
-                    PrintChart(bestPlayers);
-
-                    gameField = CreateGameField();
-                    bombsField = CreateBombsField();
-                    counter = 0;
-                    hasBombBlown = false;
-                    firstFlag = true;
-                }
-
-                if (secondFlag)
-                {
-                    Console.WriteLine("\nBRAVOOOS! Otvri 35 kletki bez kapka kryv.");
-                    PrintField(bombsField);
-                    Console.WriteLine("Daj si imeto, batka: ");
-                    string nickName = Console.ReadLine();
-                    var rating = new Rating(nickName, counter);
-                    bestPlayers.Add(rating);
-                    PrintChart(bestPlayers);
-                    gameField = CreateGameField();
-                    bombsField = CreateBombsField();
-                    counter = 0;
-                    secondFlag = false;
-                    firstFlag = true;
-                }
-            }
-            while (command != "exit");
-            Console.WriteLine("Made in Bulgaria - Uauahahahahaha!");
-            Console.WriteLine("AREEEEEEeeeeeee.");
-            Console.Read();
-        }
-
         private static void PrintChart(List<Rating> scores)
         {
             Console.WriteLine("\nTo4KI:");
@@ -345,6 +203,147 @@ namespace MineSweeper
             }
 
             return char.Parse(bombsCount.ToString());
+        }
+
+        private static void Main(string[] args)
+        {
+            const int MAX_MOVES = 35;
+
+            char[,] gameField = CreateGameField();
+            char[,] bombsField = CreateBombsField();
+
+            int counter = 0;
+            bool hasBombBlown = false;
+            List<Rating> bestPlayers = new List<Rating>(6);
+            int row = 0;
+            int col = 0;
+
+            bool firstFlag = true;
+            bool secondFlag = false;
+
+            string command = String.Empty;
+            do
+            {
+                if (firstFlag)
+                {
+                    Console.WriteLine(
+                        "Hajde da igraem na “Mini4KI”. Probvaj si kasmeta da otkriesh poleteta bez mini4ki."
+                        + " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
+                    PrintField(gameField);
+                    firstFlag = false;
+                }
+
+                Console.Write("Daj red i kolona : ");
+                command = Console.ReadLine().Trim();
+                if (command.Length >= 3)
+                {
+                    if (int.TryParse(command[0].ToString(), out row) &&
+                        int.TryParse(command[2].ToString(), out col) &&
+                        row <= gameField.GetLength(0) &&
+                        col <= gameField.GetLength(1))
+                    {
+                        command = "turn";
+                    }
+                }
+
+                switch (command)
+                {
+                    case "top":
+                        PrintChart(bestPlayers);
+                        break;
+                    case "restart":
+                        gameField = CreateGameField();
+                        bombsField = CreateBombsField();
+                        PrintField(gameField);
+                        hasBombBlown = false;
+                        firstFlag = false;
+                        break;
+                    case "exit":
+                        Console.WriteLine("4a0, 4a0, 4a0!");
+                        break;
+                    case "turn":
+                        if (bombsField[row, col] != '*')
+                        {
+                            if (bombsField[row, col] == '-')
+                            {
+                                MakeTurn(gameField, bombsField, row, col);
+                                counter++;
+                            }
+
+                            if (MAX_MOVES == counter)
+                            {
+                                secondFlag = true;
+                            }
+                            else
+                            {
+                                PrintField(gameField);
+                            }
+                        }
+                        else
+                        {
+                            hasBombBlown = true;
+                        }
+
+                        break;
+                    default:
+                        Console.WriteLine("\nGreshka! nevalidna Komanda\n");
+                        break;
+                }
+
+                if (hasBombBlown)
+                {
+                    PrintField(bombsField);
+                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " + "Daj si niknejm: ", counter);
+                    string nickName = Console.ReadLine();
+                    var playerRating = new Rating(nickName, counter);
+                    if (bestPlayers.Count < 5)
+                    {
+                        bestPlayers.Add(playerRating);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < bestPlayers.Count; i++)
+                        {
+                            if (bestPlayers[i].Score < playerRating.Score)
+                            {
+                                bestPlayers.Insert(i, playerRating);
+                                bestPlayers.RemoveAt(bestPlayers.Count - 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    bestPlayers.Sort((rating1, rating2) => rating2.PlayerName.CompareTo(rating1.PlayerName));
+                    bestPlayers.Sort((rating1, rating2) => rating2.Score.CompareTo(rating1.Score));
+                    PrintChart(bestPlayers);
+
+                    gameField = CreateGameField();
+                    bombsField = CreateBombsField();
+                    counter = 0;
+                    hasBombBlown = false;
+                    firstFlag = true;
+                }
+
+                if (secondFlag)
+                {
+                    Console.WriteLine("\nBRAVOOOS! Otvri 35 kletki bez kapka kryv.");
+                    PrintField(bombsField);
+                    Console.WriteLine("Daj si imeto, batka: ");
+                    string nickName = Console.ReadLine();
+                    var rating = new Rating(nickName, counter);
+                    bestPlayers.Add(rating);
+                    PrintChart(bestPlayers);
+                    gameField = CreateGameField();
+                    bombsField = CreateBombsField();
+                    counter = 0;
+                    secondFlag = false;
+                    firstFlag = true;
+                }
+            }
+            while (command != "exit");
+            Console.WriteLine("Made in Bulgaria - Uauahahahahaha!");
+            Console.WriteLine("AREEEEEEeeeeeee.");
+            Console.Read();
         }
     }
 }
