@@ -13,9 +13,9 @@ internal class Event : IComparable
 		this.location = location;
 	}
 
-	public DateTime Date { get; set; };
-	public String Title { get; set; };
-	public String Location { get; set; };
+	public DateTime Date { get; set; }
+	public String Title { get; set; }
+	public String Location { get; set; }
 
 	public int CompareTo(object obj)
 	{
