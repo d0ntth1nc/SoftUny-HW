@@ -52,7 +52,7 @@ internal class Program
 		GetParameters(command, "AddEvent", out date, out title, out location);
 		events.AddEvent(date, title, location);
 	}
-	
+
 	private static void GetParameters(string commandForExecution, string commandType,
 		out DateTime dateAndTime, out string eventTitle, out string eventLocation)
 	{
@@ -77,14 +77,14 @@ internal class Program
 				.Trim();
 		}
 	}
-	
+
 	private static DateTime GetDate(string command, string commandType)
 	{
 		string dateAsString = command.Substring(commandType.Length + 1, 20);
 		DateTime date = DateTime.Parse(dateAsString);
 		return date;
 	}
-	
+
 	private static void Main(string[] args)
 	{
 		while (ExecuteNextCommand()) { }

@@ -12,7 +12,7 @@ internal class Event : IComparable
 		this.title = title;
 		this.location = location;
 	}
-	
+
 	public DateTime Date { get; set; };
 	public String Title { get; set; };
 	public String Location { get; set; };
