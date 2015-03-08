@@ -57,7 +57,7 @@ namespace RotatingWalkInMatrix
                     var mostTopLeftEmptyCell = FindMostTopLeftEmptyCell(matrix);
                     if (mostTopLeftEmptyCell.HasValue)
                     {
-                        currentPosition = FindMostTopLeftEmptyCell(matrix).Value;
+                        currentPosition = mostTopLeftEmptyCell.Value;
                         currentDirection = 0;
                     }
                 }
