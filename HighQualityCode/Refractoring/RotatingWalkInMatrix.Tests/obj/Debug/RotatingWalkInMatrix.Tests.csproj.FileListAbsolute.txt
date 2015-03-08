@@ -5,3 +5,10 @@ C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix.Tests\obj\
 C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix.Tests\obj\Debug\RotatingWalkInMatrix.Tests.pdb
 C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.exe
 C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.pdb
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.Tests.dll
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.Tests.pdb
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.exe
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\bin\Debug\RotatingWalkInMatrix.pdb
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\obj\Debug\RotatingWalkInMatrix.Tests.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\obj\Debug\RotatingWalkInMatrix.Tests.dll
+D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix.Tests\obj\Debug\RotatingWalkInMatrix.Tests.pdb

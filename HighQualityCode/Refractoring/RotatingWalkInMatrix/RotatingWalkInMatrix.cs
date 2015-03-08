@@ -26,19 +26,19 @@ namespace RotatingWalkInMatrix
             {
                 matrix[currentPosition.Y, currentPosition.X] = step;
 
-                Position nextPosition = null;
-                int nextDirection = currentDirection;
+                Position newPosition = null;
+                int newDirection = currentDirection;
 
                 // Check all 8 directions
-                for (int i = 0; i < Directions.Length; i++, nextDirection++)
+                for (int i = 0; i < Directions.Length; i++, newDirection++)
                 {
-                    if (nextDirection == Directions.Length)
+                    if (newDirection == Directions.Length)
                     {
-                        nextDirection = 0;
+                        newDirection = 0;
                     }
 
-                    int nextYPos = currentPosition.Y + Directions[nextDirection].Y;
-                    int nextXPos = currentPosition.X + Directions[nextDirection].X;
+                    int nextYPos = currentPosition.Y + Directions[newDirection].Y;
+                    int nextXPos = currentPosition.X + Directions[newDirection].X;
                     bool canMoveTo =
                         nextYPos >= 0 && nextYPos < matrix.GetLength(0) &&
                         nextXPos >= 0 && nextXPos < matrix.GetLength(1) &&
@@ -46,20 +46,20 @@ namespace RotatingWalkInMatrix
 
                     if (canMoveTo)
                     {
-                        nextPosition = new Position(nextYPos, nextXPos);
-                        currentDirection = nextDirection;
+                        newPosition = new Position(nextYPos, nextXPos);
+                        currentDirection = newDirection;
                         break;
                     }
                 }
 
-                if (nextPosition == null)
+                if (newPosition == null)
                 {
                     currentPosition = FindMostTopLeftEmptyCell(matrix);
                     currentDirection = 0;
                 }
                 else
                 {
-                    currentPosition = nextPosition;
+                    currentPosition = newPosition;
                 }
             }
         }
