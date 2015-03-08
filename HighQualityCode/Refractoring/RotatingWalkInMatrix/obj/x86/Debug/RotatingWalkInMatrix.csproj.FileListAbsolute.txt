@@ -11,4 +11,3 @@ D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix\obj\
 D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix\obj\x86\Debug\RotatingWalkInMatrix.pdb
 D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix\bin\Debug\RotatingWalkInMatrix.exe
 D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix\bin\Debug\RotatingWalkInMatrix.pdb
-D:\Programming\SoftUny-HW\HighQualityCode\Refractoring\RotatingWalkInMatrix\obj\x86\Debug\RotatingWalkInMatrix.csprojResolveAssemblyReference.cache

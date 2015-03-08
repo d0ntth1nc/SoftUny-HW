@@ -19,14 +19,14 @@ namespace RotatingWalkInMatrix
 
         public static void RotateWalkInMatrix(int[,] matrix)
         {
-            var currentPosition = StartPosition;
+            Position currentPosition = StartPosition;
             int currentDirection = 0;
 
             for (int step = 1; step <= matrix.GetLength(0) * matrix.GetLength(1); step++)
             {
                 matrix[currentPosition.Y, currentPosition.X] = step;
 
-                Position newPosition = null;
+                Position? newPosition = null;
                 int newDirection = currentDirection;
 
                 // Check all 8 directions
@@ -52,14 +52,18 @@ namespace RotatingWalkInMatrix
                     }
                 }
 
-                if (newPosition == null)
+                if (!newPosition.HasValue)
                 {
-                    currentPosition = FindMostTopLeftEmptyCell(matrix);
-                    currentDirection = 0;
+                    var mostTopLeftEmptyCell = FindMostTopLeftEmptyCell(matrix);
+                    if (mostTopLeftEmptyCell.HasValue)
+                    {
+                        currentPosition = FindMostTopLeftEmptyCell(matrix).Value;
+                        currentDirection = 0;
+                    }
                 }
                 else
                 {
-                    currentPosition = newPosition;
+                    currentPosition = newPosition.Value;
                 }
             }
         }
@@ -76,7 +80,7 @@ namespace RotatingWalkInMatrix
             }
         }
 
-        private static Position FindMostTopLeftEmptyCell(int[,] matrix)
+        private static Position? FindMostTopLeftEmptyCell(int[,] matrix)
         {
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
