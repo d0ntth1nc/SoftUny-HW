@@ -1,0 +1,9 @@
+C:\Users\Alex\Downloads\13. Refactoring-Homework\Matrica\bin\Debug\RotatingWalkInMatrix.exe
+C:\Users\Alex\Downloads\13. Refactoring-Homework\Matrica\bin\Debug\RotatingWalkInMatrix.pdb
+C:\Users\Alex\Downloads\13. Refactoring-Homework\Matrica\obj\x86\Debug\RotatingWalkInMatrix.exe
+C:\Users\Alex\Downloads\13. Refactoring-Homework\Matrica\obj\x86\Debug\RotatingWalkInMatrix.pdb
+C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix\bin\Debug\RotatingWalkInMatrix.exe
+C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix\bin\Debug\RotatingWalkInMatrix.pdb
+C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix\obj\x86\Debug\RotatingWalkInMatrix.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix\obj\x86\Debug\RotatingWalkInMatrix.exe
+C:\Users\Alex\Downloads\13. Refactoring-Homework\RotatingWalkInMatrix\obj\x86\Debug\RotatingWalkInMatrix.pdb
