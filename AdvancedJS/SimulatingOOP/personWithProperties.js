@@ -2,14 +2,17 @@ function Person( firstName, lastName ) {
     this.firstName = firstName;
     this.lastName = lastName;
     
-    this.__defineGetter__("fullName", function(){
-        return this.firstName + " " + this.lastName;
-    });
-    
-    this.__defineSetter__("fullName", function( fullName ){
-        var names = fullName.split( " " );
-        this.firstName = names[ 0 ];
-        this.lastName = names[ 1 ];
+    Object.defineProperties(this, {
+        "fullName": {
+            "get": function() {
+                return this.firstName + " " + this.lastName;
+            },
+            "set": function( fullName ) {
+                var names = fullName.split( " " );
+                this.firstName = names[ 0 ];
+                this.lastName = names[ 1 ];
+            }
+        }
     });
 }
 
