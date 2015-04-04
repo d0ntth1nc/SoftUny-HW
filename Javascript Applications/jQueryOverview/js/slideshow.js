@@ -3,7 +3,7 @@
 
 var
 	ANIMATIONS_DURATION = 700, // 0.7 seconds
-	AUTO_SLIDE_INTERVAL = 5000, // seconds
+	AUTO_SLIDE_INTERVAL = 5000, // 5 seconds
 	
 	$slideshowContainer = $( '#slideshow' ),
 	$slides = $( '#slideshow .slide' ),
@@ -26,7 +26,7 @@ $slideshowContainer.on( 'click', 'button', function() {
 		slideDirection,
 		nextSlideStartPos;
 	
-	// Make decision for the slide directions
+	// Make decision for the slide directions and update the active slide index
 	if ( $this.is( '#slideshow-right-btn' ) ) {
 		slideDirection = 'toRight';
 		nextSlideStartPos = { left: containerWidth * -1 };
@@ -65,10 +65,8 @@ $slideshowContainer.on( 'click', 'button', function() {
 		.addClass( 'active' );
 		
 	slideTo( $nextSlide, slideDirection, function() {
-		// Allow this button to be clicked
+		// Mark the slide as inactive and start the automatic run again
 		isSlideActive = false;
-		
-		// Start the automatic slide again
 		autoSlide();
 	} );
 } );
@@ -79,7 +77,7 @@ autoSlide();
 function autoSlide() {
 	slideShowInterval = setInterval(function() {
 		$( '#slideshow-left-btn' ).trigger( 'click' );
-	}, 5000 );
+	}, AUTO_SLIDE_INTERVAL );
 }
 
 function slideTo( $slide, direction, callback ) {
