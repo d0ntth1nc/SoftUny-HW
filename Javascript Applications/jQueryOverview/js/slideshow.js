@@ -2,39 +2,31 @@
 	'use strict';
 
 var
-	ANIMATIONS_DURATION = 700,
+	ANIMATIONS_DURATION = 700, // 0.7 seconds
+	AUTO_SLIDE_INTERVAL = 5000, // seconds
+	
 	$slideshowContainer = $( '#slideshow' ),
 	$slides = $( '#slideshow .slide' ),
 	slidesCount = $slides.length,
 	containerWidth = $slideshowContainer.width(),
 	containerHeight = $slideshowContainer.height(),
 	activeIndex = $( '#slideshow .slide.active' ).index( '.active' ),
-	slideShowInterval;
-	
-// Allow buttons to be clicked
-$( '#slideshow button' ).data( 'canClick', true );
+	slideShowInterval,
+	isSlideActive = false;
 
 $slideshowContainer.on( 'click', 'button', function() {
-	var $this = $( this );
-	
-	if ( !$this.data( 'canClick' ) ) {
+	if ( isSlideActive ) {
 		return;
 	}
 	
-	// Stop the automatic slide
-	if ( slideShowInterval ) {
-		clearInterval( slideShowInterval );
-	}
-	
-	// Disallow this button to be clicked
-	$this.data( 'canClick', false );
-	
 	var
+		$this = $( this ),
 		$activeSlide = $slides.eq( activeIndex ),
 		$nextSlide,
 		slideDirection,
 		nextSlideStartPos;
-		
+	
+	// Make decision for the slide directions
 	if ( $this.is( '#slideshow-right-btn' ) ) {
 		slideDirection = 'toRight';
 		nextSlideStartPos = { left: containerWidth * -1 };
@@ -50,15 +42,23 @@ $slideshowContainer.on( 'click', 'button', function() {
 			activeIndex = 0;
 		}
 	} else {
+		// Other button is clicked? Ok, i'm outta here.
 		return;
 	}
 	
-	// Slide out current active
+	// Mark the slideshow active and stop the automatic run
+	isSlideActive = true;
+	
+	if ( slideShowInterval ) {
+		clearInterval( slideShowInterval );
+	}
+		
+	// Slide out the current active
 	slideTo( $activeSlide, slideDirection, function() {
 		$( this ).removeClass( 'active' );
 	} );
 	
-	// Slide in current active
+	// Slide in the next one
 	$nextSlide = $slides
 		.eq( activeIndex )
 		.css( nextSlideStartPos )
@@ -66,14 +66,14 @@ $slideshowContainer.on( 'click', 'button', function() {
 		
 	slideTo( $nextSlide, slideDirection, function() {
 		// Allow this button to be clicked
-		$this.data( 'canClick', true );
+		isSlideActive = false;
 		
 		// Start the automatic slide again
 		autoSlide();
 	} );
 } );
 
-// Simulate left button click to automatticaly change every 5 seconds
+// Simulate left button click to auto slide
 autoSlide();
 
 function autoSlide() {
