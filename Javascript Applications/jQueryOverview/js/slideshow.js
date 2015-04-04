@@ -10,7 +10,7 @@ var
 	slidesCount = $slides.length,
 	containerWidth = $slideshowContainer.width(),
 	containerHeight = $slideshowContainer.height(),
-	activeIndex = $( '#slideshow .slide.active' ).index( '.active' ),
+	activeIndex = $( '#slideshow .slide.active' ).index( '.slide' ),
 	slideShowInterval,
 	isSlideActive = false;
 
