@@ -1,0 +1,61 @@
+<head>
+<style>
+#slideshow {
+	position: relative;
+	width: 500px;
+	height: 300px;
+	margin: auto;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+#slideshow button {
+	position: absolute;
+}
+#slideshow-right-btn {
+	z-index: 2;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	right: 40px;
+}
+#slideshow-left-btn {
+	z-index: 2;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	left: 40px;
+}
+.slide {
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+.slide:nth-child(odd) {
+	background-color: green;
+}
+.slide:nth-child(even) {
+	background-color: blue;
+}
+.active{
+	visibility: visible;
+}
+</style>
+</head>
+<body>
+
+<section id="slideshow">
+	<button id="slideshow-left-btn">&lt;</button>
+	<div class='slide active'>First slide</div>
+	<div class='slide'>Second slide</div>
+	<div class='slide'>Third slide</div>
+	<div class='slide'>Fourth slide</div>
+	<button id="slideshow-right-btn">&gt;</button>
+</section>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="js/slideshow.js"></script>
+</body>
