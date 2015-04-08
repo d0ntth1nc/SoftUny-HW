@@ -1,1 +1,0 @@
-D:\Programming\SoftUny-HW\HighQualityCode\Logger\Logger.Sample\bin\Debug\Logger.Sample.exe.config
