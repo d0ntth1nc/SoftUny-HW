@@ -14,6 +14,8 @@ namespace Logger.Appenders
 
         public ReportLevel ReportLevel { get; set; }
 
+        public abstract void Append(string message, ReportLevel reportLevel, DateTime date);
+
         protected virtual string ProcessLog(string message, ReportLevel reportLevel, DateTime date)
         {
             if (reportLevel >= this.ReportLevel)
@@ -24,7 +26,5 @@ namespace Logger.Appenders
 
             return null;
         }
-
-        public abstract void Append(string message, ReportLevel reportLevel, DateTime date);
     }
 }
