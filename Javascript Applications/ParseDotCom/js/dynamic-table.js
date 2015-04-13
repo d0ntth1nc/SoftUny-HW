@@ -23,7 +23,7 @@ function editRow( $row, editableColumns ) {
 		
 		$column
 			.empty()
-			.html( INPUT_TEMPLATE );
+			.append( $( INPUT_TEMPLATE ).val( textValue ) );
 	}
 }
 
