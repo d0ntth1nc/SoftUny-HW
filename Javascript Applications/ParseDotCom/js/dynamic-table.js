@@ -21,9 +21,11 @@ function editRow( $row, editableColumns ) {
 		var $column = $columns.eq( editableColumns[ i ] ),
 			textValue = $column.text();
 		
-		$column
-			.empty()
-			.append( $( INPUT_TEMPLATE ).val( textValue ) );
+		if ( $column.is( ":not(:has(input))" ) ) {
+			$column
+				.empty()
+				.append( $( INPUT_TEMPLATE ).val( textValue ) );
+		}
 	}
 }
 
