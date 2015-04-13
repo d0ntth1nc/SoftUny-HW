@@ -55,7 +55,7 @@ $(function() {
 		.on( "row-updated", function( e, row ) {
 			row = $( row );
 			var country = row.data( "entry" );
-			country.name = row.find( "td:nth-child(2)" ).text();
+			country.name = row.find( "td:nth-child(2)" ).text() || "undefined";
 			
 			country
 				.save()
@@ -82,8 +82,8 @@ $(function() {
 		.on( "row-updated", function( e, row ) {
 			row = $( row );
 			var town = row.data( "entry" );
-			town.name = row.find( "td:nth-child(2)" ).text();
-			town.country = row.find( "td:nth-child(3)" ).text();
+			town.name = row.find( "td:nth-child(2)" ).text() || "undefined";
+			town.country = row.find( "td:nth-child(3)" ).text() || "undefined";
 			
 			town
 				.save()

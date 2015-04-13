@@ -10,7 +10,7 @@ var
 	URL = "https://api.parse.com/1/classes/";
 	
 function Country( name ) {
-	this.name = name;
+	this.name = name || "undefined";
 	this.objectId = "";
 }
 

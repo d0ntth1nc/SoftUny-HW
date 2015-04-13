@@ -5,7 +5,7 @@ var models = models || {};
 
 function Town( name, country ) {
 	models.Country.call( this, name );
-	this.country = country;
+	this.country = country || "undefined";
 }
 
 Town.prototype = Object.create( models.Country.prototype );
