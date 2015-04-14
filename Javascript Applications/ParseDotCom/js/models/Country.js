@@ -9,9 +9,18 @@ var
 	},
 	URL = "https://api.parse.com/1/classes/";
 	
-function Country( name ) {
-	this.name = name || "undefined";
-	this.objectId = "";
+function Country( name, id, createdAt, updatedAt ) {
+	if ( typeof name == "object" ) {
+		id = name.objectId;
+		createdAt = name.createdAt;
+		updatedAt = name.updatedAt;
+		name = name.name;
+	}
+	
+	this.name = name;
+	this.objectId = id;
+	this.createdAt = new Date( createdAt ).toLocaleString();
+	this.updatedAt = new Date( updatedAt ).toLocaleString();
 }
 
 function save() {
@@ -25,7 +34,7 @@ function save() {
 	$.ajax({
 		method: this.objectId ? "PUT" : "POST",
 		url: url,
-		data: JSON.stringify( this ),
+		data: JSON.stringify( { name: this.name } ),
 		headers: PARSE_DOT_COM_HEADER,
 		context: this
 	})
@@ -49,19 +58,18 @@ function remove() {
 	});
 }
 
-function sync() {
+function sync( params ) {
 	var deferred = $.Deferred();
 	
 	$.ajax({
 		method: "GET",
 		url: URL + this.constructor.name + "/" + this.objectId,
 		headers: PARSE_DOT_COM_HEADER,
+		data: params,
 		context: this
 	})
-	.done(function( data ) {
-		for ( var prop in data ) {
-			this[ prop ] = data[ prop ];
-		}
+	.done(function( country ) {
+		this.constructor.call( this, country );
 		
 		deferred.resolve();
 		
@@ -82,26 +90,21 @@ Country.prototype = {
 	constructor: Country
 }
 
-Country.loadAll = function() {
+Country.loadAll = function( params ) {
 	var deferred = $.Deferred();
 	
 	$.ajax({
 		method: "GET",
 		url: URL + this.name,
 		headers: PARSE_DOT_COM_HEADER,
+		data: params,
 		context: this
 	})
 	.done(function( data ) {
-		data = data.results;
-		var countries = [];
-		
-		for ( var i = 0, len = data.length; i < len; i++ ) {
-			var entry = data[ i ],
-				country = new this( entry.name );
-				
-			$.extend( country, entry );
-			countries.push( country );
-		}
+		var self = this;
+		var countries = data.results.map(function( country ) {
+			return new self( country );
+		});
 		
 		deferred.resolve( countries );
 	})

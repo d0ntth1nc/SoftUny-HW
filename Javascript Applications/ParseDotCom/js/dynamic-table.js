@@ -14,75 +14,110 @@ var
 		"<button data-role='clear-filters' class='btn btn-primary'>Clear filters</button>" +
 		"</td></tr>";
 
-function editRow( $row, editableColumns ) {
-	var $columns = $row.find( "td" );
+function editRow( $row ) {
+	var $columns = $row.find( "td[data-editable]:not(:has(input))" );
 	
-	for ( var i = 0, len = editableColumns.length; i < len; i++ ) {
-		var $column = $columns.eq( editableColumns[ i ] ),
+	for ( var i = 0, len = $columns.length; i < len; i++ ) {
+		var $column = $columns.eq( i ),
 			textValue = $column.text();
 		
-		if ( $column.is( ":not(:has(input))" ) ) {
-			$column
-				.empty()
-				.append( $( INPUT_TEMPLATE ).val( textValue ) );
-		}
+		$( INPUT_TEMPLATE )
+			.val( textValue )
+			.appendTo( $column.empty() );
 	}
 }
 
 function saveRow( $row ) {
+	var isUpdated = false;
+	
 	$row
 		.find( "input" )
-		.each(function( index, element ) {
-			element = $( element );
-			var value = element.val();
+		.each(function( index, input ) {
+			isUpdated = true;
+			input = $( input );
 			
-			element
-				.parent()
-				.empty()
-				.text( value );
+			var value = input.val(),
+				$td = input.parent(),
+				rowEntry = $row.data( "entry" ),
+				modelKey = $td.data( "model-key" );
+			
+			rowEntry[ modelKey ] = value;
+			
+			$td.empty().text( value );
 		});
+	
+	if ( isUpdated ) {
+		this.trigger( "row-updated", $row );
+	}
 }
 
-function makeRow( data, isHeader ) {
-	var $row = $( document.createElement( "tr" ) );
+function addRows( rowsData ) {
+	var $docFragment = $( document.createDocumentFragment() ),
+		model = this.data( "model" ),
+		modelKeys = Object.keys( model );
 	
-	for ( var i = 0, len = data.length; i < len; i++ ) {
-		if ( isHeader ) {
-			$( document.createElement( "th" ) )
-				.text( data[ i ] )
+	rowsData.forEach(function( entry ) {
+		var $row = $( document.createElement( "tr" ) )
+			.appendTo( $docFragment )
+			.data( "entry", entry );
+		
+		modelKeys.forEach(function( key ) {
+			var $td = $( document.createElement( "td" ) )
+				.text( entry[ key ] || "undefined" )
 				.appendTo( $row );
-		} else {
-			$( document.createElement( "td" ) )
-				.text( data[ i ] )
-				.appendTo( $row );
-		}
-	}
-	
-	// Adding the last column
-	if ( isHeader ) {
-		$( document.createElement( "th" ) )
-			.text( "Tools" )
-			.appendTo( $row );
-	} else {
+				
+			if ( model[ key ] === true ) {
+				$td
+					.attr( "data-editable", key )
+					.data( "model-key", key );
+			}
+		});
+		
 		$( document.createElement( "td" ) )
 			.html( TOOLBOX_TEMPLATE )
 			.appendTo( $row );
-	}
+	});
+		
+	this
+		.find( "tbody" )
+		.append( $docFragment );
 	
-	return $row;
+	return this;
+}
+
+function createHeader( headerValues ) {
+	headerValues.push( "Tools" );
+		
+	var $headerRow = $( document.createElement( "tr" ) );
+	
+	headerValues.forEach(function( value ) {
+		$( document.createElement( "th" ) )
+			.text( value )
+			.appendTo( $headerRow );
+	});
+	
+	this
+		.find( "tfoot td" )
+			.attr( "colspan", headerValues.length )
+		.end()
+		.find( "thead" )
+			.empty()
+			.append( $headerRow );
+		
+	return this;
 }
 
 $.fn.dynamicTable = $.fn.dynamicTable || function() {
-	var
-		$table = this,
-		editableColumns = [],
-		garbageValues = [];
+	var $table = this;
 	
 	this
 		.empty()
 		.append( document.createElement( "tbody" ) )
-		.append( document.createElement( "thead" ) )
-		.append( $( document.createElement( "tfoot" ) ).html( FOOTER_TEMPLATE ) );
+		.append( document.createElement( "thead" ) );
+		
+	$( document.createElement( "tfoot" ) )
+		.html( FOOTER_TEMPLATE )
+		.appendTo( this );
 	
 	this.on( "click", "button", function( e ) {
 		e.stopPropagation();
@@ -91,74 +126,44 @@ $.fn.dynamicTable = $.fn.dynamicTable || function() {
 			$row = $btn.closest( "tr" );
 			
 		switch( $btn.data( "role" ) ) {
-			case "delete":
-				$table.trigger( "row-deletion", $row );
-				break;
-			case "edit":
-				editRow( $row, editableColumns );
-				break;
-			case "save":
-				saveRow( $row );
-				$table.trigger( "row-updated", $row );
-				break;
-			case "add":
-				$table.trigger( "add-row" );
-				break;
-			case "clear-filters":
-				$table.find( "tbody tr" ).show();
-				break;
-			default:
-				throw Error( "Invalid button role!" );
+		case "delete":
+			$table.trigger( "row-deletion", $row );
+			break;
+		case "edit":
+			editRow( $row );
+			break;
+		case "save":
+			saveRow.call( $table, $row );
+			break;
+		case "add":
+			$table.trigger( "add-row" );
+			break;
+		case "clear-filters":
+			$table.find( "tbody tr" ).show();
+			break;
+		default:
+			throw Error( "Invalid button role!" );
 		}
 	});
 	
-	this.addHeader = function( headerValues ) {
-		garbageValues = headerValues;
+	this.on( "data-updated", function( e, row ) {
+		row = $( row );
 		
-		this
-			.find( "tfoot td" )
-				.attr( "colspan", headerValues.length + 1 ) // Including the extra cell for the toolbox
-			.end()
-			.find( "thead" )
-				.empty()
-				.append( makeRow( headerValues, true ) );
+		var model = $table.data( "model" ),
+			modelKeys = Object.keys( model ),
+			entry = row.data( "entry" ),
+			$columns = row.find( "td" );
+		
+		modelKeys.forEach(function( key, index ) {
+			var value = entry[ key ];
 			
-		return this;
-	};
+			$columns.eq( index ).text( value || "undefined" );
+		});
+	});
 	
-	this.addRows = function( rowsValues, rowsData ) {
-		rowsData = rowsData || [];
-		var $docFragment = $( document.createDocumentFragment() );
-		
-		for ( var i = 0, len = rowsValues.length; i < len; i++ ) {
-			makeRow( rowsValues[ i ], false )
-				.appendTo( $docFragment )
-				.data( "entry", rowsData[ i ] );
-		}
-		
-		this
-			.find( "tbody" )
-			.append( $docFragment );
-	}
+	this.addHeader = createHeader;
 	
-	this.setEditableColumns = function( _editableColumns_ ) {
-		editableColumns = _editableColumns_;
-		return this;
-	};
-	
-	this.updateRow = function( row, rowValues, rowData ) {
-		var $columns = row.find( "td" ).not( "td:last-child" );
-		
-		for ( var i = 0; i < $columns.length; i++ ) {
-			$columns
-				.eq( i )
-				.text( rowValues[ i ] );
-		}
-		
-		row.data( "entry", rowData );
-		
-		return this;
-	};
+	this.addRows = addRows;
 	
 	this.filter = function( filter ) {
 		this

@@ -1,41 +1,36 @@
 "use strict";
 (function( $ ) {
-
-function onRowDeletion( e, row ) {
-	$( row )
-		.data( "entry" )
-		.remove()
-		.done(function() {
-			$( row ).remove();
-			noty({
-				text: "Entry removed!",
-				timeout: 1000
-			});
-		})
-		.fail( showError );
-}
-
-function parseData( data ) {
-	var rowsData = [];
-		
-	for ( var i = 0, len = data.length; i < len; i++ ) {
-		var model = data[ i ];
-		var fieldsData = [];
-		
-		fieldsData.push( model.objectId );
-		fieldsData.push( model.name );
-		
-		if ( model.country ) {
-			fieldsData.push( model.country );
+	
+String.prototype.startsWith = function( string ) {
+	var i = 0, len = this.length, strLen = string.length;
+	
+	for ( ; i < len && i < strLen; i++ ) {
+		if ( this[ i ] !== string[ i ] ) {
+			return false;
 		}
-		
-		fieldsData.push( new Date( model.createdAt ).toLocaleString() );
-		fieldsData.push( new Date( model.updatedAt ).toLocaleString() );
-		
-		rowsData[ i ] = fieldsData;
 	}
 	
-	return rowsData;
+	return true;
+};
+
+function onRowDeletion( e, row ) {
+	row = $( row );
+	var entry = row.data( "entry" );
+	
+	if ( entry ) {
+		entry
+			.remove()
+			.done(function() {
+				row.remove();
+				noty({
+					text: entry.constructor.name + " removed!",
+					timeout: 1000
+				});
+			})
+			.fail( showError );
+	} else {
+		row.remove();
+	}
 }
 
 function showError( err ) {
@@ -45,29 +40,53 @@ function showError( err ) {
 	});
 };
 
+function onRowUpdated( e, row ) {
+	$( row )
+		.data( "entry" )
+		.save()
+		.done(function() {
+			$( row ).closest( "table" ).trigger( "data-updated", row );
+		})
+		.fail( showError );
+}
+
+function initAutoComplete( e ) {
+	if ( $( e.currentTarget ).attr( "data-editable" ) == "country" ) {
+		var countries = $countriesTable.data( "countries" ).map(function( country ) {
+			return { value: country.name, data: "" };
+		});
+		
+		$( e.target ).autocomplete({
+			lookup: countries
+		});
+	}
+}
+
 var $countriesTable, $townsTable;
+
 $(function() {
 	$countriesTable = $( "#countries-table" )
 		.dynamicTable()
 		.addHeader( [ "#", "Name", "Created", "Last updated" ] )
-		.setEditableColumns( [ 1 ] )
+		.data( "countries", [] )
+		.data( "model", { "objectId": false, "name": true, "createdAt": false, "updatedAt": false } )
 		.on( "row-deletion", onRowDeletion )
-		.on( "row-updated", function( e, row ) {
-			row = $( row );
-			var country = row.data( "entry" );
-			country.name = row.find( "td:nth-child(2)" ).text() || "undefined";
-			
-			country
+		.on( "row-updated", function ( e, row ) {
+			$( row )
+				.data( "entry" )
 				.save()
 				.done(function() {
-					var data = parseData( [ country ] );
-					$countriesTable.updateRow( row, data[ 0 ], country );
+					$countriesTable.trigger( "data-updated", row );
 				})
 				.fail( showError );
 		})
 		.on( "add-row", function( e ) {
 			var country = new models.Country();
-			$countriesTable.addRows( [ new Array( 4 ) ], [ country ] );
+			
+			$countriesTable
+				.addRows( [ country ] )
+				.data( "countries" )
+				.push( country );
 		})
 		.on( "click", "tr", function( e ) {
 			var entry = $( e.currentTarget ).data( "entry" );
@@ -77,44 +96,53 @@ $(function() {
 	$townsTable = $( "#towns-table" )
 		.dynamicTable()
 		.addHeader( [ "#", "Name", "Country", "Created", "Last updated" ] )
-		.setEditableColumns( [ 1, 2 ] )
+		.data( "towns", [] )
+		.data( "model", { "objectId": false, "name": true, "country": true, "createdAt": false, "updatedAt": false } )
+		.on( "focus", "td", initAutoComplete )
 		.on( "row-deletion", onRowDeletion )
 		.on( "row-updated", function( e, row ) {
-			row = $( row );
-			var town = row.data( "entry" );
-			town.name = row.find( "td:nth-child(2)" ).text() || "undefined";
-			town.country = row.find( "td:nth-child(3)" ).text() || "undefined";
-			
+			var town = $( row ).data( "entry" ),
+				countries = $countriesTable.data( "countries" ).filter( function( country ) {
+					return country.name === town.country;
+				});
+			town.country = countries[ 0 ];
 			town
 				.save()
 				.done(function() {
-					var data = parseData( [ town ] );
-					$townsTable.updateRow( row, data[ 0 ], town );
+					$townsTable.trigger( "data-updated", row );
 				})
 				.fail( showError );
 		})
 		.on( "add-row", function( e ) {
 			var town = new models.Town();
-			$townsTable.addRows( [ new Array( 5 ) ], [ town ] );
+			
+			$townsTable
+				.addRows( [ town ] )
+				.data( "towns" )
+				.push( town );
 		});
 });
 
 models
 	.Country
 	.loadAll()
-	.done(function( data ) {
+	.done(function( countries ) {
 		$(function() {
-			$countriesTable.addRows( parseData( data ), data );
+			$countriesTable
+				.addRows( countries )
+				.data( "countries", countries );
 		});
 	})
 	.fail( showError );
 	
 models
 	.Town
-	.loadAll()
+	.loadAll( "include=country" )
 	.done(function( data ) {
 		$(function() {
-			$townsTable.addRows( parseData( data ), data );
+			$townsTable
+				.addRows( data )
+				.data( "towns", data );
 		});
 	})
 	.fail( showError );

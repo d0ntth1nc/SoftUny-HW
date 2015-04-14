@@ -1,0 +1,12 @@
+.btn {
+	margin-left: 5px;
+}
+
+.autocomplete-suggestions {
+	background-color: rgba(0, 0, 0, .7);
+	color: white;
+}
+
+.autocomplete-suggestion {
+	padding: 10px;
+}
