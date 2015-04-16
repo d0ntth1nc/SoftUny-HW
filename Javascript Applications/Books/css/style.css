@@ -1,0 +1,57 @@
+#books-table input {
+	color: black;
+}
+
+#books-table .btn {
+	margin-left: 5px;
+}
+
+.dropdown .btn {
+	margin-top: 5px;
+}
+
+.dropdown-menu {
+	padding: 10px;
+}
+
+.dropdown-menu li {
+	white-space: nowrap;
+}
+
+.dropdown-menu li span {
+	vertical-align: top;
+}
+
+.dropdown-menu li:last-child {
+	white-space: normal;
+}
+
+.dropdown-menu .delete-btn, .dropdown-menu .edit-btn, .dropdown-menu .save-btn {
+	width: 20px;
+	height: 20px;
+	background-position: center;
+	background-size: contain;
+	border: none;
+	margin-left: 10px;
+	background-color: transparent;
+}
+
+.dropdown-menu .delete-btn {
+	background-image: url("../img/button-x.png");
+}
+
+.dropdown-menu .edit-btn {
+	background-image: url("../img/edit-btn.png");
+}
+
+.dropdown-menu .save-btn {
+	background-image: url("../img/save-btn.png");
+}
+
+.dropdown-menu li:last-child input {
+	width: 100%;
+}
+
+#books-table a.dropdown-toggle {
+	text-decoration: none;
+}
