@@ -1,4 +1,5 @@
-(function(){
+"use strict";
+(function( angular ){
 angular
 	.module( "StudentsPage", [] )
 	.controller( "StudentsController", function( $scope ) {
@@ -12,4 +13,4 @@ angular
 		
 		angular.extend( $scope, model );
 	});
-}())
+}( angular ));
