@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle sysbar</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li><a data-toggle="modal" data-target="#add-video-modal" href="#">Add video</a></li>
+		</ul>
+		
+		<form class="navbar-form navbar-left">
+			<label class="control-label" for="orderSelection">Order by:</label>
+			<select class="form-control" id="orderSelection" data-ng-init="orderPredicate = 'title'" data-ng-model="orderPredicate">
+				<option selected value="title">Title</option>
+				<option value="length">Length</option>
+				<option value="date">Date</option>
+				<option value="likes">Likes</option>
+			</select>
+			<label class="control-label" for="orderCheck">Desc</label>
+			<input type="checkbox" id="orderCheck" data-ng-model="orderByDesc" />
+		</form>
+		
+		<form class="navbar-form navbar-right">
+			<input type="text" class="form-control" id="inputText" placeholder="Search by category" data-ng-model="search.category" >
+			<input type="date" class="form-control" id="inputDate" data-ng-model="dateSearch">
+			<label class="control-label" for="subtitlesCheck">Subtitles</label>
+			<input type="checkbox" id="subtitlesCheck" data-ng-true-vale="true" data-ng-false-value="undefined" data-ng-model="search.haveSubtitles" />
+		</form>
+	</div>
+</div>
