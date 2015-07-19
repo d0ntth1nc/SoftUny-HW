@@ -1,0 +1,24 @@
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.exe.config
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.csprojResolveAssemblyReference.cache
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.exe
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\01.SoftUniDbContext.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\01.SoftUniDbContext.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.exe
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.exe.config
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.exe
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\03.DatabaseSearchQueries.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\01.SoftUniDbContext.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\01.SoftUniDbContext.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.exe
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\03.DatabaseSearchQueries\obj\Debug\03.DatabaseSearchQueries.pdb

@@ -1,0 +1,24 @@
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.exe.config
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.exe
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\01.SoftUniDbContext.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\EntityFramework.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\01.SoftUniDbContext.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\EntityFramework.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.csprojResolveAssemblyReference.cache
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.exe
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.exe.config
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.exe
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\05.ConcurrentChanges.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\01.SoftUniDbContext.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\EntityFramework.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\01.SoftUniDbContext.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\EntityFramework.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.exe
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\05.ConcurrentChanges\obj\Debug\05.ConcurrentChanges.pdb

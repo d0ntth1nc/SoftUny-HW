@@ -1,0 +1,20 @@
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.dll.config
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\EntityFramework.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\EntityFramework.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.dll
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.pdb
+C:\Users\Alex\documents\visual studio 2013\Projects\Homework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.dll.config
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\01.SoftUniDbContext.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.dll
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.pdb
