@@ -45,18 +45,5 @@ namespace _01.SoftUniDbContext
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_get_projects_of_employee_Result>("usp_get_projects_of_employee", firstNameParameter, lastNameParameter);
         }
-
-        public dynamic[] GetProjectsByEmployee(string firstName, string lastName)
-        {
-            var projects = this.usp_get_projects_of_employee(firstName, lastName);
-            return projects.Select(p =>
-            {
-                dynamic eo = new System.Dynamic.ExpandoObject();
-                eo.Name = p.Name;
-                eo.Description = p.Description;
-                eo.StartDate = p.StartDate;
-                return eo;
-            }).ToArray();
-        }
     }
 }

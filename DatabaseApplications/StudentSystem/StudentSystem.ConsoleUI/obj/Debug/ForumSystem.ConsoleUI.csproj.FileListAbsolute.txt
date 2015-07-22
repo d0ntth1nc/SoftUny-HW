@@ -1,0 +1,1 @@
+D:\Programming\SoftUny-HW\DatabaseApplications\StudentSystem\ForumSystem.ConsoleUI\bin\Debug\ForumSystem.ConsoleUI.exe.config

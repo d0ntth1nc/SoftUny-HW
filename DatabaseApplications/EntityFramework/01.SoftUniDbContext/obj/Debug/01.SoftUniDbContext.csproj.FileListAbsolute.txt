@@ -15,6 +15,6 @@ D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbConte
 D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.dll
 D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.xml
 D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\bin\Debug\EntityFramework.SqlServer.xml
-D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.csprojResolveAssemblyReference.cache
 D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.dll
 D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.pdb
+D:\Programming\SoftUny-HW\DatabaseApplications\EntityFramework\01.SoftUniDbContext\obj\Debug\01.SoftUniDbContext.csprojResolveAssemblyReference.cache
